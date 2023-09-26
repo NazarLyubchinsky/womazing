@@ -1,0 +1,68 @@
+.hover {
+	transition: all 0.3s ease-in;
+	&:hover {
+		opacity: 0.5;
+		color: var(--dark-green);
+	}
+}
+
+.header {
+	padding-top: 3.1875rem;
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__logo {
+		display: flex;
+		align-items: center;
+		gap: 0.6875rem;
+		font-weight: 500;
+		font-size: 1rem;
+		line-height: 1.1875rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		font-style: normal;
+		@extend .hover;
+	}
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 2.8125rem;
+		font-weight: 400;
+		font-size: .9375rem;
+		line-height: 140%;
+		letter-spacing: 0.02em;
+	}
+	&__link {
+		font-weight: 400;
+		font-size: .9375rem;
+		line-height: 140%;
+		letter-spacing: 0.02em;
+		transition: color 0.3s ease-in;
+		&.active,
+		&:hover {
+			color: var(--dark-green);
+		}
+	}
+	&__info {
+		display: flex;
+		gap: 4.1875rem;
+		font-weight: 400;
+		font-size: .9375rem;
+		line-height: 140%;
+		letter-spacing: 0.02em;
+
+		&-call {
+			display: flex;
+			align-items: center;
+			gap: 0.8125rem;
+			@extend .hover;
+
+		}
+		&-cart {
+			cursor: pointer;
+			@extend .hover;
+		}
+	}
+}
