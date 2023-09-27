@@ -1,7 +1,14 @@
-.hover {
+.hoverOpacity {
 	transition: all 0.3s ease-in;
 	&:hover {
 		opacity: 0.5;
+		color: var(--dark-green);
+	}
+}
+.hoverColor {
+	transition: color 0.3s ease-in;
+	&.active,
+	&:hover {
 		color: var(--dark-green);
 	}
 }
@@ -23,33 +30,29 @@
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		font-style: normal;
-		@extend .hover;
+		@extend .hoverOpacity;
 	}
 	&__list {
 		display: flex;
 		align-items: center;
 		gap: 2.8125rem;
 		font-weight: 400;
-		font-size: .9375rem;
+		font-size: 0.9375rem;
 		line-height: 140%;
 		letter-spacing: 0.02em;
 	}
 	&__link {
 		font-weight: 400;
-		font-size: .9375rem;
+		font-size: 0.9375rem;
 		line-height: 140%;
 		letter-spacing: 0.02em;
-		transition: color 0.3s ease-in;
-		&.active,
-		&:hover {
-			color: var(--dark-green);
-		}
+		@extend .hoverColor;
 	}
 	&__info {
 		display: flex;
 		gap: 4.1875rem;
 		font-weight: 400;
-		font-size: .9375rem;
+		font-size: 0.9375rem;
 		line-height: 140%;
 		letter-spacing: 0.02em;
 
@@ -57,12 +60,32 @@
 			display: flex;
 			align-items: center;
 			gap: 0.8125rem;
-			@extend .hover;
-
+			@extend .hoverOpacity;
 		}
 		&-cart {
 			cursor: pointer;
-			@extend .hover;
+			@extend .hoverOpacity;
+		}
+	}
+	&__btns {
+		display: flex;
+		column-gap: 0.25rem;
+	}
+
+	&__btn {
+		border: none;
+		width: 2.5rem;
+		height: 1.875rem;
+		cursor: pointer;
+		&-active {
+			color: var(--dark-green);
+		}
+	}
+	&__user {
+		display: flex;
+		align-items: center;
+		&-link {
+			@extend .hoverColor;
 		}
 	}
 }

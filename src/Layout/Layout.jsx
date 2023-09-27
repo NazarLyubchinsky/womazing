@@ -7,7 +7,11 @@ const Layout = () => {
 	const location = useLocation()
 	return (
 		<>
-			<Header />
+			{
+				location.pathname !== '/login' &&
+					location.pathname !== '/register'
+					? <Header /> : ''
+			}
 			<main>
 				<Outlet />
 			</main>

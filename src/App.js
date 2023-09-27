@@ -11,6 +11,8 @@ import './styles/index.scss'
 
 // lang
 import './i18n'
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 
 function App() {
 	return (
@@ -22,6 +24,8 @@ function App() {
 					<Route path='/shop' element={<Shop />} />
 					<Route path='/brands' element={<Brands />} />
 					<Route path='/cart' element={<Cart />} />
+					<Route path='/login' element={<Login />} />
+					<Route path='/register' element={<Register />} />
 					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>

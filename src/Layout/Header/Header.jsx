@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 
 // img
 import logo from '../../assets/header/logo.svg'
@@ -6,12 +6,17 @@ import CallOrder from '../../assets/header/CallOrder.svg'
 import shoppingBags from '../../assets/header/shoppingBags.svg'
 import { Link, NavLink } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { CustomContext } from '../../utils/Context'
 
 const Header = () => {
 	const { t, i18n } = useTranslation();
+	const [activeLanguage, setActiveLanguage] = useState('ua');
+
+	const { user } = useContext(CustomContext)
 
 	const changeLanguage = (lang) => {
 		i18n.changeLanguage(lang)
+		setActiveLanguage(lang);
 	};
 	return (
 		<div className='header'>
@@ -39,12 +44,33 @@ const Header = () => {
 
 					</div>
 					<div className='header__btns'>
-						<button className='header__btn ' onClick={() => changeLanguage('ua')} type='button'>Ua</button>
-						<button className='header__btn' onClick={() => changeLanguage('en')} type='button'>En</button>
+						<button className={`header__btn ${activeLanguage === 'ua' ? 'header__btn-active' : ''}`} onClick={() => changeLanguage('ua')} type='button'>Ua</button>
+						<button className={`header__btn ${activeLanguage === 'en' ? 'header__btn-active' : ''}`} onClick={() => changeLanguage('en')} type='button'>En</button>
 					</div>
+					<div className='header__user'>
+
+						{
+							user.login.length
+								? <NavLink className='header__user' to='profile'>
+									{/* <FaUser /> */}
+								</NavLink>
+								: ''
+						}
+
+						{
+							user.login.length
+								? <Link className='header__out' to='/'
+								// onClick={() => logOutUser()}
+								>Выйти</Link>
+								: <Link className='header__login' to='login'>Войти</Link>
+						}
+
+					</div>
+
+
 				</nav>
-			</div>
-		</div>
+			</div >
+		</div >
 	)
 }
 
