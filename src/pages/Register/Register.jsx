@@ -1,15 +1,13 @@
-
-import React, { useContext } from 'react';
-// import InputMask from 'react-input-mask';
-import { Link, useNavigate } from "react-router-dom";
-import { set, useForm } from "react-hook-form";
-import axios from 'axios';
+import React, { useContext, useRef } from 'react';
+import InputMask from 'react-input-mask';
+import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { CustomContext } from '../../utils/Context';
 
 const Register = () => {
 
-	const navigate = useNavigate()
-	const { setUser } = useContext(CustomContext);
+
+	const {  registerUser } = useContext(CustomContext);
 
 	const {
 		register,
@@ -17,19 +15,16 @@ const Register = () => {
 		formState: {
 			errors
 		},
+		watch,
 		reset
 	} = useForm({
 		mode: 'onBlur'
 	}
 	);
+	const password = useRef({});
+	password.current = watch("password", "");
 
-	const registerUser = (data) => {
-		axios.post('http://localhost:4444/users', { ...data, orders: [] })
-			.then((res) => {
-				setUser(res.data)
-				navigate('/')
-			})
-	}
+
 
 
 	return (
@@ -48,17 +43,25 @@ const Register = () => {
 				})} className='register__input' type="text" placeholder='Введите логин' />
 				<span>{errors?.login?.message}</span>
 				<label className='register__label' htmlFor="tel">Phone</label>
-				<input mask={`+\\9\\96(999)99-99-99`} type='tel' id='tel' {...register('phone', {
+				<InputMask mask={`+\\9\\96(999)99-99-99`} type='tel' id='tel' {...register('phone', {
 					required: 'Это поле обязательное *'
 				})} className="register__input" placeholder='Ввеите номер телефона' />
 				<span>{errors?.phone?.message}</span>
 				<label className='register__label' htmlFor="4">Password</label>
 				<input id='4' {...register('password', {
-					required: 'Это поле обязательное *'
+					required: "You must specify a password",
+					minLength: {
+						value: 5,
+						message: "Password must have at least 5 characters"
+					}
 				})} className="register__input" type='password' placeholder='Введите пароль' />
 				<span>{errors?.password?.message}</span>
 				<label className='register__label' htmlFor="5">Confirm Password</label>
-				<input id='5' className="register__input" type='password' placeholder='Введите пароль повторно' />
+				<input id='5' className="register__input" type='password' placeholder='Введите пароль повторно' {...register('confirmPwd', {
+					validate: value =>
+						value === password.current || "The password do not match"
+				})} />
+				{errors?.confirmPwd && <p>{errors?.confirmPwd?.message}</p>}
 				<button className='register__btn'>Зарегестрироваться</button>
 				<p className='register__quest'>уже есть аккаунт? <Link className='register__link' to='/login'>Войти</Link> </p>
 				<Link to='/' className='home'>Вернуться на главную страницу</Link>

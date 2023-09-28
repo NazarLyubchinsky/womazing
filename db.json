@@ -1,124 +1,22 @@
 {
   "users": [
     {
-      "email": "wdwdw@dsdw",
-      "login": "dwdwwdw",
-      "phone": "wdwdwdw",
-      "password": "dwwdw",
+      "email": "nazar.muxal@gmail.com",
+      "password": "$2a$10$4l7xq8s4nc.x4SDunIP.fO.K61WbIs1zR8zKk5JWd.uzCwsyJLPHO",
+      "login": "wdwd",
+      "phone": "+996(380)96-43-12",
+      "confirmPwd": "1234a",
       "orders": [],
       "id": 1
     },
     {
-      "email": "wdwdw@dsd",
-      "login": "wwdw",
-      "phone": "+380964312731",
-      "password": "wd",
+      "email": "naz1ar.muxal@gmail.com",
+      "password": "$2a$10$W3ZAPX4lTv6/5uZKmainvO1zD33hiVHsTVeZrYsIOKtlkV5RvoKJO",
+      "login": "nazar.lyubchinskyi@gmail.com",
+      "phone": "+996(380)96-43-12",
+      "confirmPwd": "1234a",
       "orders": [],
       "id": 2
-    },
-    {
-      "email": "nazar.muxal@gmail.com",
-      "login": "цвцв",
-      "phone": "+380964312731",
-      "password": "цвцв",
-      "orders": [],
-      "id": 3
-    },
-    {
-      "email": "nazar.muxal@gmail.com",
-      "login": "wdwd",
-      "phone": "+380964312731",
-      "password": "wd",
-      "orders": [],
-      "id": 4
-    },
-    {
-      "email": "wdwdw@dsd",
-      "login": "nazar.muxal@gmail.com",
-      "phone": "0822261691",
-      "password": "dfd",
-      "orders": [],
-      "id": 5
-    },
-    {
-      "email": "nazar.muxal@gmail.com",
-      "login": "dwdw",
-      "phone": "+380964312731",
-      "password": "wdww",
-      "orders": [],
-      "id": 6
-    },
-    {
-      "email": "nazar.muxal@gmail.com",
-      "login": "wdwd",
-      "phone": "+380964312731",
-      "password": "wdw",
-      "orders": [],
-      "id": 7
-    },
-    {
-      "email": "nazar.muxal@gmail.com",
-      "login": "wdwd",
-      "phone": "+380964312731",
-      "password": "wdw",
-      "orders": [],
-      "id": 8
-    },
-    {
-      "email": "dwdw@gmail.com",
-      "login": "wdwd",
-      "phone": "0822261691",
-      "password": "wdw",
-      "orders": [],
-      "id": 9
-    },
-    {
-      "email": "wdwdw@dsd",
-      "login": "dwd",
-      "phone": "dwdww",
-      "password": "dwd",
-      "orders": [],
-      "id": 10
-    },
-    {
-      "email": "nazar.muxal@gmail.com",
-      "login": "wdwd",
-      "phone": "+380964312731",
-      "password": "wdw",
-      "orders": [],
-      "id": 11
-    },
-    {
-      "email": "nazar.muxal@gmail.com",
-      "login": "wdwd",
-      "phone": "+380964312731",
-      "password": "dd",
-      "orders": [],
-      "id": 12
-    },
-    {
-      "email": "wdwdw@dsd",
-      "login": "wdwd",
-      "phone": "0822261691",
-      "password": "wdww",
-      "orders": [],
-      "id": 13
-    },
-    {
-      "email": "wdwdw@dsd",
-      "login": "wdwd",
-      "phone": "0822261691",
-      "password": "wdw",
-      "orders": [],
-      "id": 14
-    },
-    {
-      "email": "nazar.muxal@gmail.com",
-      "login": "wdwd",
-      "phone": "+380964312731",
-      "password": "wdww",
-      "orders": [],
-      "id": 15
     }
   ],
   "clothes": [

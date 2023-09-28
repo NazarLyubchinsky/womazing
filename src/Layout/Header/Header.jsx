@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-
+import { FaUser } from 'react-icons/fa'
 // img
 import logo from '../../assets/header/logo.svg'
 import CallOrder from '../../assets/header/CallOrder.svg'
@@ -12,7 +12,7 @@ const Header = () => {
 	const { t, i18n } = useTranslation();
 	const [activeLanguage, setActiveLanguage] = useState('ua');
 
-	const { user } = useContext(CustomContext)
+	const { user, logOutUser } = useContext(CustomContext)
 
 	const changeLanguage = (lang) => {
 		i18n.changeLanguage(lang)
@@ -48,23 +48,17 @@ const Header = () => {
 						<button className={`header__btn ${activeLanguage === 'en' ? 'header__btn-active' : ''}`} onClick={() => changeLanguage('en')} type='button'>En</button>
 					</div>
 					<div className='header__user'>
-
 						{
-							user.login.length
-								? <NavLink className='header__user' to='profile'>
-									{/* <FaUser /> */}
-								</NavLink>
+						user.login.length
+								? <NavLink className='header__user' to='profile'><FaUser /></NavLink>
 								: ''
 						}
 
 						{
-							user.login.length
-								? <Link className='header__out' to='/'
-								// onClick={() => logOutUser()}
-								>Выйти</Link>
+						user.login.length
+								? <Link className='header__out' to='/' onClick={() => logOutUser()} >Выйти</Link>
 								: <Link className='header__login' to='login'>Войти</Link>
 						}
-
 					</div>
 
 
