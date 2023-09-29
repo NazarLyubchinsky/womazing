@@ -1,22 +1,31 @@
 {
   "users": [
     {
-      "email": "nazar.muxal@gmail.com",
-      "password": "$2a$10$4l7xq8s4nc.x4SDunIP.fO.K61WbIs1zR8zKk5JWd.uzCwsyJLPHO",
+      "email": "wdwdw@dsd",
+      "password": "$2a$10$bXFoo0yrKgJjzl3jfqHCUuqaucWxWtVjpr3DGMIfH3IQRliwvC16W",
       "login": "wdwd",
-      "phone": "+996(380)96-43-12",
-      "confirmPwd": "1234a",
+      "phone": "+996(082)22-61-69",
+      "confirmPwd": "1234ф",
       "orders": [],
       "id": 1
     },
     {
-      "email": "naz1ar.muxal@gmail.com",
-      "password": "$2a$10$W3ZAPX4lTv6/5uZKmainvO1zD33hiVHsTVeZrYsIOKtlkV5RvoKJO",
-      "login": "nazar.lyubchinskyi@gmail.com",
+      "email": "sdwdsd@gmail.com",
+      "password": "$2a$10$lP.wFeDwaW6N2otv3fKZgeKfSUTPySIxrEAds7LAVzVO2oL1msLC.",
+      "login": "wdwdwdwd",
       "phone": "+996(380)96-43-12",
-      "confirmPwd": "1234a",
+      "confirmPwd": "12345a",
       "orders": [],
       "id": 2
+    },
+    {
+      "email": "wdwdw@dsds",
+      "password": "$2a$10$x9L1y.2FwTknwjwJg.VIyuti1jnJFHqUcv/Xe/LMGsy7WxwYwOBwq",
+      "login": "121212",
+      "phone": "+996(121)21-21-21",
+      "confirmPwd": "123456",
+      "orders": [],
+      "id": 3
     }
   ],
   "clothes": [

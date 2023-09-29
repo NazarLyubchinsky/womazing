@@ -1,10 +1,21 @@
-.login {
+.register {
+	background: url("../../assets/UserFormbg.jpg");
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background: url("../../assets/UserFormbg.jpg");
+	&__form {
+		background-color: #d0f0e4;
+		border-radius: 1.25rem;
+		display: flex;
+		flex-direction: column;
+		width: 550px;
+		padding: 1.25rem 3.125rem;
+	}
 
+	&__link {
+		color: red;
+	}
 	&__title {
 		font-weight: 700;
 		font-size: 1.875rem;
@@ -29,8 +40,8 @@
 	}
 	&__input {
 		width: 100%;
-		height: 2.5rem;
-		padding-left: .9375rem;
+		height: 40px;
+		padding-left: 15px;
 		margin: 10px 0 10px;
 		outline: none;
 		border: none;
@@ -40,12 +51,6 @@
 			color: #9a9ca5;
 		}
 	}
-	&__quest {
-		font-weight: 400;
-		font-size: .9375rem;
-		line-height: 150%;
-		color: #424551;
-	}
 	&__btn {
 		background: #66b0f0;
 		margin: 10px auto 10px;
@@ -54,28 +59,16 @@
 		line-height: 2.75rem;
 		letter-spacing: .0313rem;
 		color: #ffffff;
-		border-radius: .625rem;
+		border-radius: 10px;
 		cursor: pointer;
 		height: 40px;
 		border: none;
 		width: 50%;
 	}
-	&__form {
-		background-color: #d0f0e4;
-		border-radius: 1.25rem;
-		display: flex;
-		flex-direction: column;
-		width: 550px;
-		padding: 2.5rem 3.125rem;
-	}
-
-	&__input {
-		width: 100%;
-		height: 40px;
-		padding-left: 15px;
-	}
-
-	&__link {
-		color: red;
+	&__quest {
+		font-weight: 400;
+		font-size: .9375rem;
+		line-height: 150%;
+		color: #424551;
 	}
 }

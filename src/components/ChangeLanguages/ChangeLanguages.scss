@@ -1,0 +1,14 @@
+.language {
+	display: flex;
+	column-gap: 0.25rem;
+	justify-content: flex-end;
+	&__btn {
+		border: none;
+		width: 2.5rem;
+		height: 1.875rem;
+		cursor: pointer;
+		&-active {
+			color: var(--dark-green);
+		}
+	}
+}

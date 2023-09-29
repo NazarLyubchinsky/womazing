@@ -5,7 +5,20 @@
 		"link3": "About brand",
 		"link4": "Contact",
 		"register": "Register",
-		"login": "Login"
+		"signIn": "Sign in",
+		"exit": "Exit"
+	},
+	"login": {
+		"title": "Accessing the account.",
+		"subtitle": "Log in to your account using the email address and password you provided during registration.",
+		"email": "Email",
+		"password": "Password",
+		"login": "Log in",
+		"dontAccount": "Don't have an account?",
+		"signup": "Sign up",
+		"mainPage": "Return to the main page",
+		"field": "This field is required *",
+		"loginError":"Login error. Please check your credentials."
 	},
 	"home": {
 		"new": {

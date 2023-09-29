@@ -1,23 +1,21 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { FaUser } from 'react-icons/fa'
 // img
 import logo from '../../assets/header/logo.svg'
 import CallOrder from '../../assets/header/CallOrder.svg'
 import shoppingBags from '../../assets/header/shoppingBags.svg'
 import { Link, NavLink } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 import { CustomContext } from '../../utils/Context'
 
+import { useTranslation } from 'react-i18next'
+import ChangeLanguage from '../../components/ChangeLanguages/ChangeLanguages'
+
 const Header = () => {
-	const { t, i18n } = useTranslation();
-	const [activeLanguage, setActiveLanguage] = useState('ua');
+	const { t } = useTranslation();
 
 	const { user, logOutUser } = useContext(CustomContext)
 
-	const changeLanguage = (lang) => {
-		i18n.changeLanguage(lang)
-		setActiveLanguage(lang);
-	};
+
 	return (
 		<div className='header'>
 			<div className="container">
@@ -43,21 +41,12 @@ const Header = () => {
 						</Link>
 
 					</div>
-					<div className='header__btns'>
-						<button className={`header__btn ${activeLanguage === 'ua' ? 'header__btn-active' : ''}`} onClick={() => changeLanguage('ua')} type='button'>Ua</button>
-						<button className={`header__btn ${activeLanguage === 'en' ? 'header__btn-active' : ''}`} onClick={() => changeLanguage('en')} type='button'>En</button>
-					</div>
+					<ChangeLanguage />
 					<div className='header__user'>
 						{
-						user.login.length
-								? <NavLink className='header__user' to='profile'><FaUser /></NavLink>
-								: ''
-						}
-
-						{
-						user.login.length
-								? <Link className='header__out' to='/' onClick={() => logOutUser()} >Выйти</Link>
-								: <Link className='header__login' to='login'>Войти</Link>
+							user.login.length
+								? <Link className='header__user-link' to='/' onClick={() => logOutUser()} > <FaUser />{t("header.exit")}</Link>
+								: <Link className='header__user-link' to='login'>{t("header.signIn")}</Link>
 						}
 					</div>
 

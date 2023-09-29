@@ -3,36 +3,47 @@ import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form";
 import { CustomContext } from '../../utils/Context';
 
+import ChangeLanguage from '../../components/ChangeLanguages/ChangeLanguages';
+import { useTranslation } from 'react-i18next';
+
 
 
 const Login = () => {
+	const { t } = useTranslation();
 
-	const { loginUser } = useContext(CustomContext);
-
+	const { loginUser, loginError } = useContext(CustomContext);
 
 	const {
 		register,
 		handleSubmit,
-		setError: {
+		formState: {
 			errors
 		},
-		reset
 	} = useForm();
 
-
+	const fieldRequired = t("login.field");
 
 	return (
 		<section className='login'>
 			<form className='login__form' onSubmit={handleSubmit(loginUser)}>
-				<h2 className='login__title'>Вход в аккаунт</h2>
-				<p className='login__text'>Войдите в свою учетную запись, используя адрес электронной почты и пароль, указанные при регистрации.</p>
-				<label className='login__label' htmlFor="1">Email</label>
-				<input id='1' {...register('email')} className='login__input' type="email" placeholder='Your working email' />
-				<label className='login__label' htmlFor="2">Password</label>
-				<input id='2' {...register('password')} className='login__input' type="password" placeholder='Enter password' />
-				<button className='login__btn' type='submit'>Войти</button>
-				<p className='login__quest'>нет аккаунат? <Link className='login__link' to='/register'>Регистрация</Link> </p>
-				<Link to='/' className='home'>Вернуться на главную страницу</Link>
+			<ChangeLanguage />
+				<h2 className='login__title'>{t("login.title")}</h2>
+				<p className='login__text'>{t("login.subtitle")}</p>
+				<label className='login__label' >{t("login.email")}</label>
+				<input  {...register('email', {
+					required: fieldRequired,
+				})} className='login__input' type="email" placeholder='Your working email' />
+				<span className='register__link'>{errors?.email?.message}</span>
+
+				<label className='login__label' >{t("login.password")}</label>
+				<input  {...register('password', {
+					required: fieldRequired,
+				})} className='login__input' type="password" placeholder='Enter password' />
+				<span className='register__link'>{errors?.email?.message}</span>
+				{loginError && <p className='register__link'>{loginError}</p>}
+				<button className='login__btn' type='submit'>{t("login.login")}</button>
+				<p className='login__quest'>{t("login.dontAccount")}<Link className='login__link' to='/register'>{t("login.signup")}</Link> </p>
+				<Link to='/' className='home'>{t("login.mainPage")}</Link>
 			</form>
 		</section>
 	);

@@ -67,25 +67,15 @@
 			@extend .hoverOpacity;
 		}
 	}
-	&__btns {
-		display: flex;
-		column-gap: 0.25rem;
-	}
-
-	&__btn {
-		border: none;
-		width: 2.5rem;
-		height: 1.875rem;
-		cursor: pointer;
-		&-active {
-			color: var(--dark-green);
-		}
-	}
+	
 	&__user {
 		display: flex;
 		align-items: center;
 		&-link {
-			@extend .hoverColor;
+			display: flex;
+			align-items: center;
+			gap: .4375rem;
+			@extend .hoverOpacity;
 		}
 	}
 }

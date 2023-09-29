@@ -1,14 +1,20 @@
 import React, { createContext, useEffect, useState } from "react"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export const CustomContext = createContext();
 
 
 export const Context = (props) => {
+	const { t } = useTranslation();
+
 	const [user, setUser] = useState({
 		login: ""
 	});
+	const [loginError, setLoginError] = useState(null);
+	const [registerError, setRegisterError] = useState(null);
+
 
 	const [page, setPage] = useState(1);
 
@@ -24,20 +30,27 @@ export const Context = (props) => {
 	const registerUser = (data) => {
 		axios.post('http://localhost:8080/register', { ...data, orders: [] })
 			.then((res) => {
+
 				localStorage.setItem('user', JSON.stringify(res.data.user));
 				setUser(res.data.user);
 				navigate('/')
+			}).catch((err) => {
+				setRegisterError(err.response.data)
 			})
 	};
 
 	const loginUser = (data) => {
+
 		axios.post('http://localhost:8080/login', data)
 			.then((res) => {
-				localStorage.setItem('user', JSON.stringify(res.data.user));
-				setUser(res.data.user);
+				const users = res.data.user;
+				localStorage.setItem('user', JSON.stringify(users));
+				setUser(users);
 				navigate('/')
 			})
+			.catch((err) => setLoginError(t("login.loginError")));
 	};
+
 
 	useEffect(() => {
 		if (localStorage.getItem('user') !== null) {
@@ -67,7 +80,11 @@ export const Context = (props) => {
 		setStatus,
 		status,
 		product,
-		setProduct
+		setProduct,
+		loginError,
+		setLoginError,
+		registerError,
+		setRegisterError
 	};
 
 
