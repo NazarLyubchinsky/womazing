@@ -5,70 +5,70 @@
 	align-items: center;
 	height: 100vh;
 	&__form {
-		background-color: #d0f0e4;
+		background-color: var(--light-green);
 		border-radius: 1.25rem;
 		display: flex;
 		flex-direction: column;
-		width: 550px;
+		width: 34.375rem;
 		padding: 1.25rem 3.125rem;
 	}
 
 	&__link {
-		color: red;
+		color: var(--red);
 	}
 	&__title {
 		font-weight: 700;
 		font-size: 1.875rem;
 		line-height: 150%;
 		text-align: center;
-		color: #1e212c;
+		color: var(--black);
 	}
 	&__text {
 		font-weight: 400;
-		font-size: .875rem;
+		font-size: 0.875rem;
 		line-height: 150%;
 		display: flex;
 		align-items: center;
 		text-align: center;
-		color: #787a80;
+		color: var(--grey);
 	}
 	&__label {
 		font-weight: 400;
-		font-size: .875rem;
-		color: #424551;
+		font-size: 0.875rem;
+		color: var(--dark-grey);
 		cursor: pointer;
 	}
 	&__input {
 		width: 100%;
-		height: 40px;
-		padding-left: 15px;
-		margin: 10px 0 10px;
+		height: 2.5rem;
+		padding-left: .9375rem;
+		margin: .625rem 0 .625rem;
 		outline: none;
 		border: none;
 		&::placeholder {
 			font-weight: 400;
-			font-size: .875rem;
-			color: #9a9ca5;
+			font-size: 0.875rem;
+			color: var(--light-grey);
 		}
 	}
 	&__btn {
-		background: #66b0f0;
-		margin: 10px auto 10px;
+		background: var(--blue);
+		margin: .625rem auto .625rem;
 		font-weight: 700;
-		font-size: .875rem;
+		font-size: 0.875rem;
 		line-height: 2.75rem;
-		letter-spacing: .0313rem;
-		color: #ffffff;
-		border-radius: 10px;
+		letter-spacing: 0.0313rem;
+		color: var(--white);
+		border-radius: .625rem;
 		cursor: pointer;
-		height: 40px;
+		height: 2.5rem;
 		border: none;
 		width: 50%;
 	}
 	&__quest {
 		font-weight: 400;
-		font-size: .9375rem;
+		font-size: 0.9375rem;
 		line-height: 150%;
-		color: #424551;
+		color: var(--dark-grey);
 	}
 }

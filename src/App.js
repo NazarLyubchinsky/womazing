@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+
 import Layout from "./Layout/Layout";
 import Brands from "./pages/Brands/Brands";
 import Cart from "./pages/Cart/Cart";
@@ -7,12 +8,12 @@ import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
 import Shop from "./pages/Shop/Shop";
+import Login from "./pages/Login/Login";
+import Register from "./pages/Register/Register";
 import './styles/index.scss'
 
 // lang
 import './i18n'
-import Login from "./pages/Login/Login";
-import Register from "./pages/Register/Register";
 
 function App() {
 	return (

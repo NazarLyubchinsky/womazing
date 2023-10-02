@@ -1,0 +1,13 @@
+.back {
+	display: flex;
+	.backToHome {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 0.1875rem;
+		transition: opacity 0.2s ease-in;
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}

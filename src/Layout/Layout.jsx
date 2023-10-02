@@ -19,6 +19,7 @@ const Layout = () => {
 				location.pathname === '/'
 					|| location.pathname === "/contact"
 					|| location.pathname === "/shop"
+					|| location.pathname === "/shop/"
 					|| location.pathname === "/brands"
 					|| location.pathname === "/cart"
 					? <Footer /> : ''

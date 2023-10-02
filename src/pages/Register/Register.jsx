@@ -4,68 +4,72 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { CustomContext } from '../../utils/Context';
 
+import { useTranslation } from 'react-i18next';
+import BackToHome from '../../components/BackToHome/BackToHome';
+import ChangeLanguages from '../../components/ChangeLanguages/ChangeLanguages';
+
+
 const Register = () => {
 
 
-	const { registerUser,registerError } = useContext(CustomContext);
+	const { registerUser, registerError } = useContext(CustomContext);
+	const { t } = useTranslation();
 
-	const {
-		register,
-		handleSubmit,
-		formState: {
-			errors
-		},
-		watch,
-	} = useForm({
-		mode: 'onBlur'
-	}
-	);
+
+	const { register, handleSubmit, formState: { errors }, watch, } = useForm({ mode: 'onBlur' });
 	const password = useRef({});
 	password.current = watch("password", "");
 
 
-
-
+	const fieldRequired = t("register.field");
 	return (
 		<section className='register'>
 			<form className='register__form' onSubmit={handleSubmit(registerUser)}>
-				<h2 className='register__title'>Регистрация</h2>
-				<p className='register__text'>Регистрация занимает меньше минуты, но дает вам полный контроль над заказом вещей</p>
-				<label className='register__label' >Email</label>
+				<BackToHome />
+				<ChangeLanguages />
+				<h2 className='register__title'>{t("register.title")}</h2>
+				<p className='register__text'>{t("register.subtitle")}</p>
+				<br />
+
+				<label className='register__label' >{t("register.email")}</label>
 				<input  {...register('email', {
-					required: 'Это поле обязательное *',
-				})} className='register__input' type="email" placeholder='Введите email' />
+					required: fieldRequired,
+				})} className='register__input' type="email" placeholder='Enter your email.' />
 				<span className='register__link'>{errors?.email?.message}</span>
-				<label className='register__label' >Login</label>
+
+				<label className='register__label' >{t("register.login")}</label>
 				<input  {...register('login', {
-					required: 'Это поле обязательное *'
-				})} className='register__input' type="text" placeholder='Введите логин' />
+					required: fieldRequired
+				})} className='register__input' type="text" placeholder='Enter your username.' />
 				<span className='register__link'>{errors?.login?.message}</span>
-				<label className='register__label' >Phone</label>
-				<InputMask mask={`+\\9\\96(999)99-99-99`} type='tel' id='tel' {...register('phone', {
-					required: 'Это поле обязательное *'
-				})} className="register__input" placeholder='Ввеите номер телефона' />
+
+				<label className='register__label' >{t("register.phone")}</label>
+				<InputMask mask={`+\\(3\\80)99999-99-99`} type='tel' id='tel' {...register('phone', {
+					required: fieldRequired
+				})} className="register__input" placeholder='Enter your phone number.' />
 				<span className='register__link'>{errors?.phone?.message}</span>
-				<label className='register__label' >Password</label>
+
+				<label className='register__label' >{t("register.password")}</label>
 				<input  {...register('password', {
-					required: "Необхідно вказати пароль",
+					required: t("register.passwordNeed"),
 					minLength: {
 						value: 5,
-						message: "Password must have at least 5 characters"
+						message: t("register.passwordLength")
 					}
-				})} className="register__input" type='password' placeholder='Введите пароль' />
+				})} className="register__input" type='password' placeholder='Enter your password.' />
 				<span className='register__link'>{errors?.password?.message}</span>
-				<label className='register__label' >Confirm Password</label>
-				<input className="register__input" type='password' placeholder='Введите пароль повторно' {...register('confirmPwd', {
+
+				<label className='register__label' >{t("register.confirmPassword")}</label>
+				<input className="register__input" type='password' placeholder='Re-enter your password.' {...register('confirmPwd', {
 					validate: value =>
-						value === password.current || "The password do not match"
+						value === password.current || t("register.passwordDontMatch")
 				})} />
 				{errors?.confirmPwd && <p className='register__link'>{errors?.confirmPwd?.message}</p>}
 				{registerError && <p className='register__link'>{registerError}</p>}
 
-				<button className='register__btn'>Зарегестрироваться</button>
-				<p className='register__quest'>уже есть аккаунт? <Link className='register__link' to='/login'>Войти</Link> </p>
-				<Link to='/' className='home'>Вернуться на главную страницу</Link>
+				<button className='register__btn'>{t("register.register")}</button>
+				<p className='register__quest'>{t("register.haveAccount")} <Link className='register__link' to='/login'>{t("register.login")}</Link> </p>
+
 
 			</form>
 		</section>

@@ -1,0 +1,7 @@
+.navigations {
+	display: flex;
+	gap: 0.8125rem;
+	&__main {
+		@extend .hoverOpacity;
+	}
+}

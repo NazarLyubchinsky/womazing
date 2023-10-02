@@ -1,0 +1,27 @@
+.card {
+	width: calc(33.33333% - 1.25rem);
+	text-align: center;
+	&__img {
+		width: 100%;
+	}
+	&__title {
+		font-weight: 500;
+		font-size: 1.25rem;
+		line-height: 140%;
+		letter-spacing: 0.02em;
+		color: #000000;
+		margin-top: 0.625rem;
+	}
+	&__price {
+		font-weight: 500;
+		font-size: 0.9375rem;
+		line-height: 140%;
+		letter-spacing: 0.02em;
+		display: flex;
+		justify-content: center;
+		gap: .125rem;
+		&-sale {
+			color: #9c9c9c;
+		}
+	}
+}

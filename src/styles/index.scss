@@ -12,12 +12,35 @@
 }
 .container {
 	width: 100%;
-	max-width: 1110px;
+	max-width: 69.375rem;
 	margin: 0 auto;
+}
+.hoverOpacity {
+	transition: all 0.3s ease-in;
+	&:hover {
+		opacity: 0.5;
+		color: var(--dark-green);
+	}
+}
+.hoverColor {
+	transition: color 0.3s ease-in;
+	&.active,
+	&:hover {
+		color: var(--dark-green);
+	}
 }
 
 @import "../Layout/Header/header.scss";
-@import "../pages/Login/login.scss";
+@import "../Layout/Footer/footer.scss";
 @import "../pages/Register/register.scss";
 @import "../pages/Login/login.scss";
+@import "../pages/Shop/shop.scss";
+@import "../pages/Shop/ShopList/shopList.scss";
+@import "../pages/Shop/QuantityGoods/quantityGoods.scss";
+
 @import "../components/ChangeLanguages/ChangeLanguages.scss";
+@import "../components/BackToHome/BackToHome.scss";
+@import "../components/Title/title.scss";
+@import "../components/SubTitle/subTitle.scss";
+@import "../components/Logo/logo.scss";
+@import "../components/Card/Card.scss";

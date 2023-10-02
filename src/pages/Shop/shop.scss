@@ -1,0 +1,30 @@
+.shop {
+	&__list {
+		display: flex;
+		column-gap: 0.625rem;
+		align-items: center;
+		margin: 7.125rem 0 5.75rem;
+	}
+	&__item {
+		padding: 1.1875rem 4.0625rem;
+		border: 1px solid;
+		border-color: var(--black-color);
+		font-weight: 500;
+		font-size: 1.0625rem;
+		line-height: 140%;
+		letter-spacing: 0.02em;
+		color: var(--black-color);
+		transition: all 0.3s ease-in;
+		cursor: pointer;
+		&:hover,
+		&_active {
+			background: var(--black-color);
+			color: var(--white);
+		}
+	}
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.875rem;
+	}
+}

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { FaUser } from 'react-icons/fa'
 // img
-import logo from '../../assets/header/logo.svg'
 import CallOrder from '../../assets/header/CallOrder.svg'
 import shoppingBags from '../../assets/header/shoppingBags.svg'
 import { Link, NavLink } from 'react-router-dom'
@@ -9,6 +8,7 @@ import { CustomContext } from '../../utils/Context'
 
 import { useTranslation } from 'react-i18next'
 import ChangeLanguage from '../../components/ChangeLanguages/ChangeLanguages'
+import Logo from '../../components/Logo/Logo'
 
 const Header = () => {
 	const { t } = useTranslation();
@@ -20,15 +20,11 @@ const Header = () => {
 		<div className='header'>
 			<div className="container">
 				<nav className="header__nav">
-					<Link to='/' className='header__logo'>
-						<img src={logo} alt="Logo" />
-						Womazing
-					</Link>
+					<Logo />
 					<ul className='header__list'>
-						<li className='header__item'><NavLink className='header__link' to='/'>{t("header.link1")}</NavLink></li>
-						<li className='header__item'><NavLink className='header__link' to='/shop'>{t("header.link2")}</NavLink></li>
-						<li className='header__item'><NavLink className='header__link' to='/brands'>{t("header.link3")}</NavLink></li>
-						<li className='header__item'><NavLink className='header__link' to='/contact'>{t("header.link4")}</NavLink></li>
+						<li className='header__item'><NavLink className='header__link' to='shop'>{t("header.link2")}</NavLink></li>
+						<li className='header__item'><NavLink className='header__link' to='brands'>{t("header.link3")}</NavLink></li>
+						<li className='header__item'><NavLink className='header__link' to='contact'>{t("header.link4")}</NavLink></li>
 					</ul>
 					<div className='header__info'>
 						<Link to="tel: +380 963 211 212" className='header__info-call'>
