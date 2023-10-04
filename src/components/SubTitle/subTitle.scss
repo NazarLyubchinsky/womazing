@@ -4,4 +4,10 @@
 	&__main {
 		@extend .hoverOpacity;
 	}
+	&__page, &__name{
+		color: var(--grey);
+	}
+	&__category {
+		@extend .hoverOpacity;
+	}
 }

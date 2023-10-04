@@ -16,13 +16,18 @@ const Layout = () => {
 				<Outlet />
 			</main>
 			{
-				location.pathname === '/'
-					|| location.pathname === "/contact"
-					|| location.pathname === "/shop"
-					|| location.pathname === "/shop/"
-					|| location.pathname === "/brands"
-					|| location.pathname === "/cart"
-					? <Footer /> : ''
+				location.pathname === '/login'
+				|| location.pathname === '/register'
+					? '' : <Footer />
+
+				// location.pathname === '/'
+				// 	|| location.pathname === "/contact"
+				// 	|| location.pathname === "/shop"
+				// 	|| location.pathname === "/shop/"
+				// 	|| location.pathname === "/brands"
+				// 	|| location.pathname === "/cart"
+				// 	|| location.pathname === "/product"
+				// 	? <Footer /> : ''
 			}
 		</>
 	)

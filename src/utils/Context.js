@@ -15,12 +15,19 @@ export const Context = (props) => {
 
 	const [shop, setShop] = useState([]);
 	const [page, setPage] = useState(1);
+	const [sort, setSort] = useState('');
 	const [status, setStatus] = useState('all');
 	const [product, setProduct] = useState({});
 
+	const [size, setSize] = useState('');
+	const [color, setColor] = useState('');
+
+	
+
+
 	const navigate = useNavigate();
 
-	const API_BASE_URL = "http://localhost:8080";
+	 const API_BASE_URL = "http://localhost:8080";
 
 
 	const handleApiError = (error, isRegistrationError) => {
@@ -109,20 +116,35 @@ export const Context = (props) => {
 	const value = {
 		user,
 		setUser,
-		registerUser,
+
 		logOutUser,
 		loginUser,
-		shop,
-		page,
-		setPage,
-		setStatus,
-		status,
-		product,
-		setProduct,
 		loginError,
 		setLoginError,
+		registerUser,
 		registerError,
-		setRegisterError
+		setRegisterError,
+
+		shop,
+
+		page,
+		setPage,
+
+		status,
+		setStatus,
+
+		product,
+		setProduct,
+
+		sort,
+		setSort,
+
+		size,
+		setSize,
+		color,
+		setColor
+
+		
 	};
 
 

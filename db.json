@@ -503,7 +503,7 @@
 			"image": {
 				"beige": "Shop/tshort2-beige.jpg",
 				"brown": "Shop/tshort2-brown.jpg",
-				"black": "Shop/tshort2-grey.jpg",
+				"gray": "Shop/tshort2-grey.jpg",
 				"pink": "Shop/tshort2-pink.jpg",
 				"red": "Shop/tshort2-red.jpg",
 				"white": "Shop/tshort2.jpg"
@@ -521,7 +521,7 @@
 				"beige",
 				"red",
 				"white",
-				"black"
+				"gray"
 			],
 			"inStock": 31,
 			"priceSale": 40

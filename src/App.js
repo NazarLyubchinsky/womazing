@@ -14,6 +14,7 @@ import './styles/index.scss'
 
 // lang
 import './i18n'
+import Product from "./pages/Product/Product";
 
 function App() {
 	return (
@@ -23,6 +24,7 @@ function App() {
 					<Route path="/" element={<Home />} />
 					<Route path='/contact' element={<Contact />} />
 					<Route path='/shop' element={<Shop />} />
+					<Route path='/product/:id' element={<Product />} />
 					<Route path='/brands' element={<Brands />} />
 					<Route path='/cart' element={<Cart />} />
 					<Route path='/login' element={<Login />} />

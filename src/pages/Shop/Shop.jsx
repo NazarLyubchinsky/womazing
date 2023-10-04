@@ -1,17 +1,22 @@
 import React, { memo, useContext, useEffect, useRef } from 'react'
+
 import SubTitle from '../../components/SubTitle/SubTitle'
 import Title from '../../components/Title/Title'
-import { CustomContext } from '../../utils/Context';
-import { Pagination } from 'antd';
+import Card from '../../components/Card/Card';
+
 import ShopList from './ShopList/ShopList';
 import QuantityGoods from './QuantityGoods/QuantityGoods';
-import Card from '../../components/Card/Card';
+import { CustomContext } from '../../utils/Context';
+
 import { useTranslation } from 'react-i18next';
+import { Pagination } from 'antd';
+import ShopSorts from './ShopSorts/ShopSorts';
 
 const Shop = () => {
 	const { t } = useTranslation();
 
-	const { shop, status, page, setPage } = useContext(CustomContext)
+
+	const { shop, status, page, setPage, sort } = useContext(CustomContext)
 	const isFirstRender = useRef(true);
 
 
@@ -41,14 +46,31 @@ const Shop = () => {
 			<div className='container' >
 				<Title title={t("shop.title")} />
 				<SubTitle page={t("shop.link2")} />
+
 				<ul className='shop__list'>
 					<ShopListMemo className={'shop__item'} classNameActive={'shop__item_active'} />
 				</ul>
+				<ShopSorts />
 				<QuantityGoods shop={shop} FilterCategory={FilterCategory} FilterPage={FilterPage} />
+
 				<div className='shop__row'>
 					{
-						shop.filter(FilterCategory).filter(FilterPage).map((item) => (
-							<Card key={item.id} item={item} />
+						shop.sort((a, b) => {
+							if (sort === 'big') {
+								return (b.priceSale || b.price) - (a.priceSale || a.price)
+							} else if (sort === 'less') {
+								return (a.priceSale || a.price) - (b.priceSale || b.price)
+							} else if (sort === 'discount') {
+								return (
+									(a.priceSale && b.priceSale && b.priceSale - a.priceSale) ||
+									(a.priceSale && -1) ||
+									(b.priceSale && 1) ||
+									((b.priceSale || b.price) - (a.priceSale || a.price))
+								);
+							}
+							return 0;
+						}).filter(FilterCategory).filter(FilterPage).map((item) => (
+							<Card styleWidth={'calc(33.33333% - 1.25rem)'} key={item.id} item={item} />
 						))
 					}
 				</div>
