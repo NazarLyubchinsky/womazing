@@ -10,15 +10,6 @@ import Card from '../../../components/Card/Card';
 const SliderProduct = () => {
 	const { shop, product } = useContext(CustomContext);
 
-	
-	
-
-	const scrollToTop = () => {
-		window.scrollTo({
-			top: 170,
-			behavior: 'smooth',
-		});
-	};
 
 	return (
 		<>
@@ -46,7 +37,8 @@ const SliderProduct = () => {
 					shop.filter(item => {
 						return item.category === product.category && item.id !== product.id
 					}).map(item => (
-						<SwiperSlide onClick={scrollToTop} key={item.id}>
+						<SwiperSlide
+							key={item.id}>
 							<Card item={item} />
 						</SwiperSlide>
 					))

@@ -22,12 +22,51 @@ export const Context = (props) => {
 	const [size, setSize] = useState('');
 	const [color, setColor] = useState('');
 
-	
+	const [isLoading, setIsLoading] = useState(true);
+
+	const [cart, setCart] = useState([]);
+
+	// Add cart
+	const addCart = (product) => {
+		let idx = cart.findIndex(item => item.id === product.id && item.color === product.color && item.size === product.size);
+		if (idx >= 0) {
+			setCart(cart.map(item => {
+				if (item.id === product.id && item.color === product.color && item.size === product.size) {
+					return { ...item, count: +item.count + +product.count }
+				} else {
+					return item
+				}
+			}))
+		} else {
+			setCart([...cart, product]);
+		}
+	};
+
+
+	// Update cart
+	const updateCart = (id, color, size, count) => {
+		setCart(cart.map(item => {
+			if (item.id === id && item.color === color && item.size === size) {
+				return { ...item, count: count }
+			} else {
+				return item
+			}
+		}))
+	};
+
+
+	// Delete cart
+	const deleteCart = (id, color, size) => {
+		setCart(cart.filter((item) => {
+			return item.id !== id || item.color !== color || item.size !== size
+		}))
+	}
+
+	const [ticket, setTicket] = useState([]);
 
 
 	const navigate = useNavigate();
-
-	 const API_BASE_URL = "http://localhost:8080";
+	const API_BASE_URL = "http://localhost:8080";
 
 
 	const handleApiError = (error, isRegistrationError) => {
@@ -84,11 +123,7 @@ export const Context = (props) => {
 	};
 
 
-	// LogOutUser user
-	const logOutUser = () => {
-		localStorage.removeItem('user');
-		setUser({ login: '' })
-	};
+
 
 
 	useEffect(() => {
@@ -104,47 +139,60 @@ export const Context = (props) => {
 		if (localStorage.getItem('user') !== null) {
 			setUser(JSON.parse(localStorage.getItem('user')));
 		}
+
+		if (localStorage.getItem('cart') !== null) {
+			setCart(JSON.parse(localStorage.getItem('cart')))
+		}
+
 		try {
 			const response = await axios(`${API_BASE_URL}/clothes`);
 			const data = response.data;
 			setShop(data);
 		} catch (error) {
 			handleApiError(error);
+		} finally {
+			setIsLoading(false);
 		}
 	};
 
+	useEffect(() => {
+		localStorage.setItem('cart', JSON.stringify(cart))
+	}, [cart]);
+
+	// LogOutUser user
+	const logOutUser = () => {
+		localStorage.removeItem('user');
+		localStorage.removeItem('cart');
+		setUser({ login: '' })
+	};
+
 	const value = {
-		user,
-		setUser,
+		API_BASE_URL,
+		user, setUser,
 
 		logOutUser,
 		loginUser,
-		loginError,
-		setLoginError,
+
+		loginError, setLoginError,
+		registerError, setRegisterError,
 		registerUser,
-		registerError,
-		setRegisterError,
 
 		shop,
 
-		page,
-		setPage,
+		page, setPage,
 
-		status,
-		setStatus,
+		status, setStatus,
 
-		product,
-		setProduct,
+		product, setProduct,
 
-		sort,
-		setSort,
+		sort, setSort,
 
-		size,
-		setSize,
-		color,
-		setColor
+		size, setSize, color, setColor,
 
-		
+		isLoading, setIsLoading,
+
+		cart, setCart, addCart, deleteCart, updateCart,
+		ticket, setTicket
 	};
 
 

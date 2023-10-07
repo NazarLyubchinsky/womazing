@@ -11,12 +11,15 @@ import { CustomContext } from '../../utils/Context';
 import { useTranslation } from 'react-i18next';
 import { Pagination } from 'antd';
 import ShopSorts from './ShopSorts/ShopSorts';
+import Preloader from '../../components/Preloader/Preloader';
 
 const Shop = () => {
 	const { t } = useTranslation();
 
 
-	const { shop, status, page, setPage, sort } = useContext(CustomContext)
+
+
+	const { shop, status, page, setPage, sort, isLoading } = useContext(CustomContext)
 	const isFirstRender = useRef(true);
 
 
@@ -37,10 +40,8 @@ const Shop = () => {
 	}, [page]);
 
 
-
 	const FilterCategory = (item) => status === 'all' ? item : item.category === status
 	const FilterPage = (item, idx) => { return idx + 1 <= page * 9 && idx >= page * 9 - 9 }
-
 	return (
 		<section className='shop'>
 			<div className='container' >
@@ -52,28 +53,35 @@ const Shop = () => {
 				</ul>
 				<ShopSorts />
 				<QuantityGoods shop={shop} FilterCategory={FilterCategory} FilterPage={FilterPage} />
+				{
+					isLoading ? (
+						<Preloader />
+					) : (
+						<div className='shop__row'>
+							{
+								shop.sort((a, b) => {
+									if (sort === 'big') {
+										return (b.priceSale || b.price) - (a.priceSale || a.price)
+									} else if (sort === 'less') {
+										return (a.priceSale || a.price) - (b.priceSale || b.price)
+									} else if (sort === 'discount') {
+										return (
+											(a.priceSale && b.priceSale && b.priceSale - a.priceSale) ||
+											(a.priceSale && -1) ||
+											(b.priceSale && 1) ||
+											((b.priceSale || b.price) - (a.priceSale || a.price))
+										);
+									}
+									return 0;
+								}).filter(FilterCategory).filter(FilterPage).map((item) => (
+									<Card styleWidth={'calc(33.33333% - 1.25rem)'} key={item.id} item={item} />
 
-				<div className='shop__row'>
-					{
-						shop.sort((a, b) => {
-							if (sort === 'big') {
-								return (b.priceSale || b.price) - (a.priceSale || a.price)
-							} else if (sort === 'less') {
-								return (a.priceSale || a.price) - (b.priceSale || b.price)
-							} else if (sort === 'discount') {
-								return (
-									(a.priceSale && b.priceSale && b.priceSale - a.priceSale) ||
-									(a.priceSale && -1) ||
-									(b.priceSale && 1) ||
-									((b.priceSale || b.price) - (a.priceSale || a.price))
-								);
+								))
 							}
-							return 0;
-						}).filter(FilterCategory).filter(FilterPage).map((item) => (
-							<Card styleWidth={'calc(33.33333% - 1.25rem)'} key={item.id} item={item} />
-						))
-					}
-				</div>
+						</div>
+					)
+				}
+
 				<br />
 				<br />
 				<br />

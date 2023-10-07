@@ -33,7 +33,7 @@
 				color: #9c9c9c;
 			}
 			&-line {
-				margin: 0 .625rem;
+				margin: 0 0.625rem;
 				color: black;
 			}
 		}
@@ -43,10 +43,11 @@
 			line-height: 140%;
 			letter-spacing: 0.02em;
 			color: #000000;
+			margin: 0.875rem 0;
 		}
 		&-sizes {
 			display: flex;
-			column-gap: .9375rem;
+			column-gap: 0.9375rem;
 		}
 		&-size {
 			border: 1px solid #000000;
@@ -63,7 +64,6 @@
 			text-transform: uppercase;
 			transition: 0.3s;
 			cursor: pointer;
-			margin-bottom: 4.1875rem;
 			&:hover,
 			&_active {
 				color: #fff;
@@ -83,7 +83,7 @@
 		}
 		&-form {
 			display: flex;
-			column-gap: .4375rem;
+			column-gap: 0.4375rem;
 			margin-top: 3.125rem;
 		}
 		&-input {
@@ -95,6 +95,7 @@
 			text-align: center;
 		}
 		&-btn {
+			min-height: 4.25rem;
 			background: #6e9c9f;
 			padding: 0 3.125rem;
 			font-weight: 400;
@@ -105,6 +106,8 @@
 			border: none;
 			cursor: pointer;
 			color: #ffffff;
+			display: flex;
+			align-items: center;
 		}
 	}
 	input[type="number"]::-webkit-outer-spin-button,
