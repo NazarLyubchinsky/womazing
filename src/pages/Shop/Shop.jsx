@@ -12,6 +12,8 @@ import { useTranslation } from 'react-i18next';
 import { Pagination } from 'antd';
 import ShopSorts from './ShopSorts/ShopSorts';
 import Preloader from '../../components/Preloader/Preloader';
+import { Link } from 'react-router-dom';
+
 
 const Shop = () => {
 	const { t } = useTranslation();
@@ -19,7 +21,7 @@ const Shop = () => {
 
 
 
-	const { shop, status, page, setPage, sort, isLoading } = useContext(CustomContext)
+	const { shop, status, page, setPage, sort, isLoading , user} = useContext(CustomContext)
 	const isFirstRender = useRef(true);
 
 
@@ -51,7 +53,14 @@ const Shop = () => {
 				<ul className='shop__list'>
 					<ShopListMemo className={'shop__item'} classNameActive={'shop__item_active'} />
 				</ul>
-				<ShopSorts />
+				<div className='shop__sorts' >
+					{
+						user.email === 'admin@gmail.com' ? <Link to='/create' className={`sorts__sort`}>
+							добавить
+						</Link> : <span></span>
+				}
+					<ShopSorts />
+				</div>
 				<QuantityGoods shop={shop} FilterCategory={FilterCategory} FilterPage={FilterPage} />
 				{
 					isLoading ? (

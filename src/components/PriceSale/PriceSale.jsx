@@ -8,6 +8,8 @@ const PriceSale = ({ item }) => {
 	const currensy = isUa ? 'Грн' : '$';
 	const price = isUa ? item.price * 38 : item.price;
 
+	const discountedPriceSale =  item.priceSale * 38
+	const roundedDiscountedPrice = parseFloat(discountedPriceSale.toFixed(0));
 	return (
 		<>
 			{item.priceSale ? (
@@ -19,13 +21,12 @@ const PriceSale = ({ item }) => {
 						/
 					</p>
 					<p className='price__sale'>
-						{isUa ? item.priceSale * 38 : item.priceSale} {currensy}
+						{isUa ? roundedDiscountedPrice : item.priceSale} {currensy}
 					</p>
 				</div>
 			) : (
 				<>
-					<span className='price__sale'> {price}</span>
-					<span className='price__sale'> {currensy}</span>
+					<span className='price__sale'>{price} {currensy}</span>
 				</>
 			)}
 		</>

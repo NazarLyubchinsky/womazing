@@ -3,7 +3,9 @@
 		"main": "Головний",
 		"shown": "Показаний",
 		"from": "з",
-		"products": "продуктів"
+		"products": "продуктів",
+		"inStock": "В наявності",
+		"notStock": "Немає в наявності"
 	},
 	"header": {
 		"link1": "Головна",
@@ -210,5 +212,13 @@
 		"street": "Вулиця",
 		"house": "Будинок",
 		"flat": "Квартира"
+	},
+	"product": {
+		"selectSize": "Виберіть розмір",
+		"selectColor": "Виберіть колір",
+		"outofStock": "Немає в наявності",
+		"relatedProducts": "Пов'язані товари",
+		"addToCart": "Добавить в корзину",
+		"signInToAddToCart": "Ввійти, щоб додати в корзину"
 	}
 }

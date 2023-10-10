@@ -25,6 +25,10 @@ const Header = () => {
 						<li className='header__item'><NavLink className='header__link' to='shop'>{t("header.link2")}</NavLink></li>
 						<li className='header__item'><NavLink className='header__link' to='brands'>{t("header.link3")}</NavLink></li>
 						<li className='header__item'><NavLink className='header__link' to='contact'>{t("header.link4")}</NavLink></li>
+
+						{
+							user.email === 'admin@gmail.com' ? <li className='header__item'><NavLink className='header__link' to="/clothes">Admin Panel</NavLink></li> : ''
+						}
 					</ul>
 					<div className='header__info'>
 						<Link to="tel: +380 963 211 212" className='header__info-call'>
@@ -41,7 +45,10 @@ const Header = () => {
 					<div className='header__user'>
 						{
 							user.login.length
-								? <Link className='header__user-link' to='/' onClick={() => logOutUser()} > <FaUser />{t("header.exit")}</Link>
+								? <>
+									<Link to='profile'>	<FaUser /></Link>
+									<Link className='header__user-link' to='/' onClick={() => logOutUser()} >{t("header.exit")}</Link>
+								</>
 								: <Link className='header__user-link' to='login'>{t("header.signIn")}</Link>
 						}
 					</div>

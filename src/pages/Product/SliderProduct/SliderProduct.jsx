@@ -39,7 +39,7 @@ const SliderProduct = () => {
 					}).map(item => (
 						<SwiperSlide
 							key={item.id}>
-							<Card item={item} />
+							<Card styleWidth={'calc(100% - 33px)'} item={item} />
 						</SwiperSlide>
 					))
 				}

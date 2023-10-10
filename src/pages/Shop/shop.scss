@@ -23,9 +23,16 @@
 			color: var(--white);
 		}
 	}
+	&__sorts {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: .9375rem;
+	}
 	&__row {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1.875rem;
 	}
+
 }

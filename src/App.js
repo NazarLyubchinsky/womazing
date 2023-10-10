@@ -1,4 +1,4 @@
-import  { Suspense } from "react";
+import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Layout from "./Layout/Layout";
@@ -16,21 +16,33 @@ import Product from "./pages/Product/Product";
 import Preloader from "./components/Preloader/Preloader";
 import Basket from "./pages/Basket/Basket";
 import Checkout from "./pages/Checkout/Checkout";
+import Profile from "./pages/Profile/Profile";
+import AdminPanel from "./pages/AdminPanel/AdminPanel";
+import { useContext } from "react";
+import { CustomContext } from "./utils/Context";
+import CreateProduct from "./pages/CreateProduct/CreateProduct";
 
 function App() {
+	const { user } = useContext(CustomContext)
 	return (
 		<Suspense fallback={<Preloader />}>
 			<Routes>
 				<Route path="/" element={<Layout />}>
-					<Route path="" element={<Home />} />
+					{/* <Route path="" element={<Home />} /> */}
+					{user.email !== 'admin@gmail.com' ? <Route path='/' element={<Home />} /> : ''}
 					<Route path='contact' element={<Contact />} />
 					<Route path='shop' element={<Shop />} />
 					<Route path='product/:id' element={<Product />} />
 					<Route path='brands' element={<Brands />} />
 					<Route path='cart' element={<Basket />} />
 					<Route path='checkout' element={<Checkout />} />
+					<Route path='profile' element={<Profile />} />
 					<Route path='login' element={<Login />} />
 					<Route path='register' element={<Register />} />
+					{/* {user.email === 'admin@gmail.com' ? <Route path='admin/*' element={<AdminPanel />} /> : ''} */}
+					{/* {user.email === 'admin@gmail.com' ? <Route path='clothes' element={<AdminPanel />} /> : ''} */}
+					{user.email === 'admin@gmail.com' ? <Route path='create' element={<CreateProduct/>} /> : ''}
+					{user.email === 'admin@gmail.com' ? <Route path='/*' element={<AdminPanel />} /> : ''}
 					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>

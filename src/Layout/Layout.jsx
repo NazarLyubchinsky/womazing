@@ -18,6 +18,7 @@ const Layout = () => {
 			{
 				location.pathname === '/login'
 				|| location.pathname === '/register'
+				|| location.pathname === '/admin'
 					? '' : <Footer />
 
 				// location.pathname === '/'

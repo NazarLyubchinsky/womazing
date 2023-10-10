@@ -14,6 +14,19 @@ export const Context = (props) => {
 	const [registerError, setRegisterError] = useState(null);
 
 	const [shop, setShop] = useState([]);
+
+	const getAllClothes = async () => {
+		try {
+			const response = await axios(`${API_BASE_URL}/clothes`);
+			const data = response.data;
+			setShop(data);
+		} catch (error) {
+			handleApiError(error);
+		} finally {
+			setIsLoading(false);
+		}
+	}
+
 	const [page, setPage] = useState(1);
 	const [sort, setSort] = useState('');
 	const [status, setStatus] = useState('all');
@@ -144,15 +157,7 @@ export const Context = (props) => {
 			setCart(JSON.parse(localStorage.getItem('cart')))
 		}
 
-		try {
-			const response = await axios(`${API_BASE_URL}/clothes`);
-			const data = response.data;
-			setShop(data);
-		} catch (error) {
-			handleApiError(error);
-		} finally {
-			setIsLoading(false);
-		}
+		getAllClothes()
 	};
 
 	useEffect(() => {
@@ -177,7 +182,7 @@ export const Context = (props) => {
 		registerError, setRegisterError,
 		registerUser,
 
-		shop,
+		shop,setShop,
 
 		page, setPage,
 
@@ -192,7 +197,10 @@ export const Context = (props) => {
 		isLoading, setIsLoading,
 
 		cart, setCart, addCart, deleteCart, updateCart,
-		ticket, setTicket
+		ticket, setTicket,
+
+		getAllClothes
+
 	};
 
 

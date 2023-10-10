@@ -1,8 +1,6 @@
 .sorts {
 	display: flex;
-	column-gap: 20px;
-	justify-content: flex-end;
-	align-items: flex-end;
+	column-gap: 1.25rem;
 	&__sort {
 		border: 1px solid #6e9c9f;
 		background: transparent;
@@ -10,8 +8,9 @@
 		width: 100px;
 		height: 40px;
 		cursor: pointer;
-		transition: all .3s ease-in;
-		&.active,&:hover {
+		transition: all 0.3s ease-in;
+		&.active,
+		&:hover {
 			background: #6e9c9f;
 			color: white;
 		}

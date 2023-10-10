@@ -1,9 +1,11 @@
 {
 	"separate": {
-		"main":"Main",
-		"shown":"Shown",
-		"from":"from",
-		"products":"products"
+		"main": "Main",
+		"shown": "Shown",
+		"from": "from",
+		"products": "products",
+		"inStock": "in stock",
+		"notStock": "Not in stock"
 	},
 	"header": {
 		"link1": "Main",
@@ -210,5 +212,13 @@
 		"street": "Street",
 		"house": "House",
 		"flat": "Flat"
+	},
+	"product": {
+		"selectSize": "Select size",
+		"selectColor": "Select color",
+		"outofStock": "Out of stock",
+		"relatedProducts": "Related products",
+		"addToCart": "Add to cart",
+		"signInToAddToCart": "Sign in to add to cart"
 	}
 }

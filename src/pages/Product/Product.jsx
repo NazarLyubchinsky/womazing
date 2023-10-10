@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useContext, useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { Link, useLocation, useParams } from 'react-router-dom'
 import Preloader from '../../components/Preloader/Preloader'
 import PriceSale from '../../components/PriceSale/PriceSale'
 import SubTitle from '../../components/SubTitle/SubTitle'
@@ -9,12 +10,15 @@ import { CustomContext } from '../../utils/Context'
 import SliderProduct from './SliderProduct/SliderProduct'
 
 const Product = () => {
-
+	const { t } = useTranslation();
+	const location = useLocation();
 	const params = useParams()
 
-	const { color, setColor, size, setSize, product, setProduct, addCart, user } = useContext(CustomContext)
+	const { color, setColor, size, setSize, product, setProduct, addCart, user, shop, getAllClothes } = useContext(CustomContext)
 
 	const [count, setCount] = useState(1)
+	const [sale, setSale] = useState(false);
+	const [saleCount, setSaleCount] = useState('');
 
 	useEffect(() => {
 		axios(`http://localhost:8080/clothes/${params.id}`)
@@ -28,7 +32,7 @@ const Product = () => {
 				});
 			})
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [params])
+	}, [location, shop])
 
 
 	return (
@@ -37,11 +41,32 @@ const Product = () => {
 				{product.title ? <>
 					<Title title={product.title} />
 					<SubTitle category={product.category} name={product.title} />
-					<div className="product__content"  >
+					<div className="product__content" >
 						<img src={`../${product.image[color]}`} alt={product.title} className="product__content-img" />
 						<div className="product__content-info">
-							<PriceSale item={product} />
-							<p className='product__content-choose'>Выберите размер</p>
+							{
+								!product.priceSale ?
+									<>
+										{sale ? <input placeholder='%' value={saleCount} onChange={(e) => setSaleCount(e.target.value)} type="number" /> : ''}
+
+										<button type='button' onClick={() => {
+											if (sale) {
+												const discountedPrice = product.price - (product.price / 100 * saleCount);
+												const roundedDiscountedPrice = parseFloat(discountedPrice.toFixed(2));
+												axios.patch(`http://localhost:8080/clothes/${product.id}`, { priceSale: roundedDiscountedPrice  })
+													.then(() => {
+														getAllClothes();
+														setSaleCount(0)
+													})
+											}
+											setSale(!sale);
+										}}>Добавить {sale ? '' : 'скидку'}</button>
+									</>
+									: ''
+							}
+
+							<PriceSale saleCount={saleCount} item={product} />
+							<p className='product__content-choose'>{t("product.selectSize")}</p>
 							<ul className='product__content-sizes'>
 								{
 									product.size.map((item, idx) => (
@@ -49,7 +74,7 @@ const Product = () => {
 									))
 								}
 							</ul>
-							<p className='product__content-choose'>Выберите цвет</p>
+							<p className='product__content-choose'>{t("product.selectColor")}</p>
 							<ul className='product__content-sizes'>
 								{
 									product.colors.map((item, idx) => (
@@ -58,25 +83,10 @@ const Product = () => {
 								}
 							</ul>
 							{
-								product.inStock ? <p className='product__content-choose'>В наличие: {product.inStock}</p> : <p className='product__content-choose'>нет в наличие</p>
+								product.inStock ? <p className='product__content-choose'>{t("separate.inStock")}: {product.inStock}</p> : <p className='product__content-choose'>{t("separate.notStock")}</p>
 							}
 							<div className='product__content-form'>
-								{/* {product.inStock  ? <>
-									<input className='product__content-input' min='1' max={product.inStock} type="number" value={count} onChange={(e) => setCount(e.target.value)} />
-									<button className='product__content-btn' onClick={() => addCart({
-										id: product.id,
-										title: product.title,
-										image: product.image,
-										color,
-										size,
-										count,
-										price: product.priceSale || product.price,
-										category: product.category
-									})} type='button'>Добавить в корзину</button>
-								</>
-									: null
-								} */}
-								{user.login  ? (
+								{user.login ? (
 									// User is logged in
 									product.inStock ? (
 										<>
@@ -90,20 +100,20 @@ const Product = () => {
 												count,
 												price: product.priceSale || product.price,
 												category: product.category
-											})} type='button'>Добавить в корзину</button>
+											})} type='button'>{t("product.addToCart")}</button>
 										</>
 									) : (
 										// Product is not in stock
-									null
+										null
 									)
 								) : (
 									// User is not logged in
-									<Link  className='product__content-btn' to="/login">Ввійти, щоб додати в корзину</Link>
+									<Link className='product__content-btn' to="/login">{t("product.signInToAddToCart")}</Link>
 								)}
 							</div>
 						</div>
 					</div>
-					<p className='product__similar'>Связанные товары</p>
+					<p className='product__similar'>{t("product.relatedProducts")}</p>
 					<div className='product__row'>
 						<SliderProduct />
 					</div>

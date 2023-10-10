@@ -1,13 +1,11 @@
 .navigations {
 	display: flex;
 	gap: 0.8125rem;
-	&__main {
+	&__main, &__category, &__shop {
 		@extend .hoverOpacity;
 	}
 	&__page, &__name{
 		color: var(--grey);
 	}
-	&__category {
-		@extend .hoverOpacity;
-	}
+
 }
