@@ -14,6 +14,7 @@
 	width: 100%;
 	max-width: 69.375rem;
 	margin: 0 auto;
+	padding: 0 0.75rem;
 }
 .hoverOpacity {
 	transition: all 0.3s ease-in;
@@ -29,6 +30,22 @@
 		color: var(--dark-green);
 	}
 }
+.hoverBackgrounColor {
+	transition: all 0.3s ease-in;
+	&.active,
+	&:hover {
+		background: var(--dark-green);
+		color: var(--white);
+	}
+}
+.hoverReverseBackgrounColor {
+	transition: all 0.3s ease-in;
+	&.active,
+	&:hover {
+		background: var(--white);
+		color: var(--dark-green);
+	}
+}
 
 @import "../Layout/Header/header.scss";
 @import "../Layout/Footer/footer.scss";
@@ -40,17 +57,17 @@
 @import "../pages/Shop/ShopList/shopList.scss";
 @import "../pages/Shop/QuantityGoods/quantityGoods.scss";
 @import "../pages/Shop/ShopSorts/ShopSorts.scss";
-@import "../pages/Basket/basket.scss"; 
+@import "../pages/Basket/basket.scss";
 @import "../pages/Product/Product.scss";
 @import "../pages/Product/SliderProduct/SliderProduct.scss";
 
 @import "../pages/Checkout/Checkout.scss";
 
-@import "../pages/Profile/profile.scss";
+@import "../pages/Profile/profile.scss"; //+
 
 @import "../pages/CreateProduct/CreateProduct.scss";
 
-
+@import "../pages/Order/order.scss";
 
 @import "../components/ChangeLanguages/ChangeLanguages.scss";
 @import "../components/BackToHome/BackToHome.scss";

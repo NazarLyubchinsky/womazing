@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom'
 import { CustomContext } from '../../utils/Context';
 
-const SubTitle = ({ page, shop, category, name }) => {
+const SubTitle = ({ page, shop, category, name, order, checkout }) => {
 	const { t } = useTranslation();
 	const { setPage, setStatus } = useContext(CustomContext)
 
@@ -19,7 +19,8 @@ const SubTitle = ({ page, shop, category, name }) => {
 						setPage(1)
 						setStatus(category)
 					}}>{category}</Link>
-					: <Link className='navigations__shop' to='/shop'>{shop}</Link>
+						: checkout ? <Link className='navigations__shop' to='/checkout'>{checkout}</Link>
+					: <Link className='navigations__shop' to='/shop'>{shop}</Link> 
 			}
 			{
 				name ? (
@@ -27,8 +28,13 @@ const SubTitle = ({ page, shop, category, name }) => {
 						-
 						<p className='navigations__name'>{name}</p>
 					</>
-				) : null
+				) : order ? 	<>
+				-
+				<p className='navigations__name'>{order}</p>
+			</>: null
 			}
+
+
 
 		</div >
 	)

@@ -47,9 +47,9 @@ const Product = () => {
 							{
 								!product.priceSale ?
 									<>
-										{sale ? <input placeholder='%' value={saleCount} onChange={(e) => setSaleCount(e.target.value)} type="number" /> : ''}
+										{sale ? <input className='product__content-inputSale' placeholder='%' value={saleCount} onChange={(e) => setSaleCount(e.target.value)} type="number" /> : ''}
 
-										<button type='button' onClick={() => {
+										<button  className='product__content-btnSale'  type='button' onClick={() => {
 											if (sale) {
 												const discountedPrice = product.price - (product.price / 100 * saleCount);
 												const roundedDiscountedPrice = parseFloat(discountedPrice.toFixed(2));
@@ -64,7 +64,6 @@ const Product = () => {
 									</>
 									: ''
 							}
-
 							<PriceSale saleCount={saleCount} item={product} />
 							<p className='product__content-choose'>{t("product.selectSize")}</p>
 							<ul className='product__content-sizes'>

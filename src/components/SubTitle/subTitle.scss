@@ -1,11 +1,14 @@
 .navigations {
 	display: flex;
 	gap: 0.8125rem;
+	&__main{
+		max-width: 5rem
+	}
 	&__main, &__category, &__shop {
 		@extend .hoverOpacity;
 	}
 	&__page, &__name{
 		color: var(--grey);
 	}
-
 }
+

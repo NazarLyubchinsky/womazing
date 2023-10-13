@@ -21,6 +21,7 @@ import AdminPanel from "./pages/AdminPanel/AdminPanel";
 import { useContext } from "react";
 import { CustomContext } from "./utils/Context";
 import CreateProduct from "./pages/CreateProduct/CreateProduct";
+import Order from "./pages/Order/Order";
 
 function App() {
 	const { user } = useContext(CustomContext)
@@ -36,6 +37,7 @@ function App() {
 					<Route path='brands' element={<Brands />} />
 					<Route path='cart' element={<Basket />} />
 					<Route path='checkout' element={<Checkout />} />
+					<Route path='order' element={<Order />} />
 					<Route path='profile' element={<Profile />} />
 					<Route path='login' element={<Login />} />
 					<Route path='register' element={<Register />} />

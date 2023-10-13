@@ -39,7 +39,6 @@ const CheckoutForm = () => {
 				...user.orders,
 				{
 					...data,
-					...data,
 					clothes: cart,
 					price: Array.isArray(ticket) && ticket.length
 						? cart.reduce((acc, rec) => acc + rec.count * rec.price, 0) - cart.reduce((acc, rec) => acc + rec.count * rec.price, 0) / 100 * ticket[0].discount
@@ -61,7 +60,6 @@ const CheckoutForm = () => {
 		await setCart([]);
 		await setTicket([]);
 		await navigate('/order')
-
 
 	};
 	return (
@@ -147,7 +145,7 @@ const CheckoutForm = () => {
 						placeholder={t("checkout.country")} />
 					<input {...register('city')} className="checkout__address-input" type="text"
 						placeholder={t("checkout.city")} />
-					<input {...register('street ')} className="checkout__address-input" type="text"
+					<input {...register('street')} className="checkout__address-input" type="text"
 						placeholder={t("checkout.street")} />
 					<input {...register('house')} className="checkout__address-input" type="text"
 						placeholder={t("checkout.home")} />

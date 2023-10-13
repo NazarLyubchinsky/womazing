@@ -16,7 +16,22 @@
 		margin-top: 6.375rem;
 		display: flex;
 		column-gap: 4.625rem;
+		&-btnSale {
+			background: #6e9c9f;
+			color: white;
+			border: none;
+			cursor: pointer;
+			padding: 10px;
+			margin-right: 10px;
+		}
 
+		&-inputSale {
+			width: 100px;
+			padding: 8px;
+			border: 1px solid #6e9c9f;
+			outline: none;
+			margin-right: 5px;
+		}
 		&-img {
 			width: 50%;
 			max-width: 33.5rem;

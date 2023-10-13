@@ -11,8 +11,8 @@ const Card = ({ item, styleWidth }) => {
 
 	return (
 		<div style={{ width: styleWidth }} key={item.id} className='card' >
-			<Link  className="card__link" to={`/product/${item.id}`}>
-				<LazyLoadImage style={{width: '100%', height: '100%'}}
+			<Link className="card__link" to={`/product/${item.id}`}>
+				<LazyLoadImage style={{ width: '100%', height: '100%' }}
 					className='card__img'
 					alt={item.title}
 					src={`../${item.image[Object.keys(item.image)[0]]}`}

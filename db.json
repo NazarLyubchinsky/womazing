@@ -13,7 +13,7 @@
       "email": "admin@gmail.com",
       "password": "$2a$10$LwF17vBPRFQRO2Y86hpdG.tOah2Wum8CaBL6VnN2pWltF6dM.xGuy",
       "login": "1111",
-      "phone": "+(380)12121-21-21",
+      "phone": "+996(380)12-12-12",
       "confirmPwd": "1234a",
       "orders": [
         {
@@ -22,28 +22,114 @@
           "phone": "+380964312731",
           "county": "wddw",
           "city": "Дрогобич",
-          "street ": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
-          "house": "23223",
-          "flat": "2323",
-          "message": "323",
+          "street": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
+          "house": "11",
+          "flat": "22",
+          "message": "22",
           "clothes": [
             {
-              "id": 2,
-              "title": "Hoody Harley Queen",
+              "id": 3,
+              "title": "Hoody Anime",
               "image": {
-                "black": "Shop/hoody2.jpg",
-                "white": "Shop/hoody2-white.jpg"
+                "black": "Shop/hoody3.jpg",
+                "white": "Shop/hoody3-white.jpg",
+                "grey": "Shop/hoody3-grey.jpg"
+              },
+              "color": "white",
+              "size": "s",
+              "count": 3,
+              "price": 10,
+              "category": "hoody"
+            },
+            {
+              "id": 3,
+              "title": "Hoody Anime",
+              "image": {
+                "black": "Shop/hoody3.jpg",
+                "white": "Shop/hoody3-white.jpg",
+                "grey": "Shop/hoody3-grey.jpg"
               },
               "color": "black",
               "size": "s",
               "count": 2,
-              "price": 60,
+              "price": 10,
+              "category": "hoody"
+            },
+            {
+              "id": 3,
+              "title": "Hoody Anime",
+              "image": {
+                "black": "Shop/hoody3.jpg",
+                "white": "Shop/hoody3-white.jpg",
+                "grey": "Shop/hoody3-grey.jpg"
+              },
+              "color": "grey",
+              "size": "s",
+              "count": 1,
+              "price": 10,
               "category": "hoody"
             }
           ],
-          "price": 120,
-          "date": "2023-10-10T14:59:14.054Z"
-        }
+          "price": 60,
+          "date": "2023-10-13T15:57:22.794Z"
+        },
+		  {
+			"name": "Назар Любчинський",
+			"email": "nazar.muxal@gmail.com",
+			"phone": "+380964312731",
+			"county": "wddw",
+			"city": "Дрогобич",
+			"street": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
+			"house": "11",
+			"flat": "22",
+			"message": "22",
+			"clothes": [
+			  {
+				 "id": 3,
+				 "title": "Hoody Anime",
+				 "image": {
+					"black": "Shop/hoody3.jpg",
+					"white": "Shop/hoody3-white.jpg",
+					"grey": "Shop/hoody3-grey.jpg"
+				 },
+				 "color": "white",
+				 "size": "s",
+				 "count": 3,
+				 "price": 10,
+				 "category": "hoody"
+			  },
+			  {
+				 "id": 3,
+				 "title": "Hoody Anime",
+				 "image": {
+					"black": "Shop/hoody3.jpg",
+					"white": "Shop/hoody3-white.jpg",
+					"grey": "Shop/hoody3-grey.jpg"
+				 },
+				 "color": "black",
+				 "size": "s",
+				 "count": 2,
+				 "price": 10,
+				 "category": "hoody"
+			  },
+			  {
+				 "id": 3,
+				 "title": "Hoody Anime",
+				 "image": {
+					"black": "Shop/hoody3.jpg",
+					"white": "Shop/hoody3-white.jpg",
+					"grey": "Shop/hoody3-grey.jpg"
+				 },
+				 "color": "grey",
+				 "size": "s",
+				 "count": 1,
+				 "price": 10,
+				 "category": "hoody"
+			  }
+			],
+			"price": 60,
+			"date": "2023-10-13T15:57:22.794Z"
+		 }
       ],
       "id": 2
     }
@@ -63,11 +149,11 @@
       "category": "hoody",
       "size": [
         "s",
-        "m",
         "l",
         "xl",
         "xxl",
-        "xs"
+        "xs",
+        "m"
       ],
       "colors": [
         "red",
@@ -144,8 +230,7 @@
         "black",
         "white"
       ],
-      "inStock": 25,
-      "priceSale": ""
+      "inStock": 25
     },
     {
       "id": 5,
@@ -656,10 +741,284 @@
       "phone": "+380964312731",
       "county": "wddw",
       "city": "Дрогобич",
-      "street ": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
-      "house": "23223",
-      "flat": "2323",
-      "message": "323",
+      "street": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
+      "house": "11",
+      "flat": "11",
+      "message": "11",
+      "clothes": [
+        {
+          "id": 2,
+          "title": "Hoody Harley Queen",
+          "image": {
+            "black": "Shop/hoody2.jpg",
+            "white": "Shop/hoody2-white.jpg"
+          },
+          "color": "black",
+          "size": "s",
+          "count": 1,
+          "price": 60,
+          "category": "hoody"
+        }
+      ],
+      "price": 60,
+      "userEmail": "admin@gmail.com",
+      "date": "2023-10-13T13:56:39.303Z",
+      "id": 1
+    },
+    {
+      "name": "Назар Любчинський",
+      "email": "nazar.muxal@gmail.com",
+      "phone": "+380964312731",
+      "county": "wddw",
+      "city": "Дрогобич",
+      "street": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
+      "house": "22",
+      "flat": "22",
+      "message": "22",
+      "clothes": [
+        {
+          "id": 1,
+          "title": "Hoody Chess",
+          "image": {
+            "black": "Shop/hoody1.jpg",
+            "red": "Shop/hoody1-red.jpg",
+            "white": "Shop/hoody1-white.jpg",
+            "blue": "Shop/hoody1-blue.jpg"
+          },
+          "color": "red",
+          "size": "s",
+          "count": 1,
+          "price": 60,
+          "category": "hoody"
+        }
+      ],
+      "price": 60,
+      "userEmail": "admin@gmail.com",
+      "date": "2023-10-13T13:59:17.372Z",
+      "id": 2
+    },
+    {
+      "name": "Назар Любчинський",
+      "email": "nazar.muxal@gmail.com",
+      "phone": "+380964312731",
+      "county": "wddw",
+      "city": "Дрогобич",
+      "street": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
+      "house": "11",
+      "flat": "11",
+      "message": "11",
+      "clothes": [
+        {
+          "id": 2,
+          "title": "Hoody Harley Queen",
+          "image": {
+            "black": "Shop/hoody2.jpg",
+            "white": "Shop/hoody2-white.jpg"
+          },
+          "color": "black",
+          "size": "s",
+          "count": 1,
+          "price": 60,
+          "category": "hoody"
+        }
+      ],
+      "price": 60,
+      "userEmail": "admin@gmail.com",
+      "date": "2023-10-13T14:00:18.729Z",
+      "id": 3
+    },
+    {
+      "name": "Назар Любчинський",
+      "email": "nazar.muxal@gmail.com",
+      "phone": "+380964312731",
+      "county": "wddw",
+      "city": "Дрогобич",
+      "street": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
+      "house": "1",
+      "flat": "1",
+      "message": "11",
+      "clothes": [
+        {
+          "id": 1,
+          "title": "Hoody Chess",
+          "image": {
+            "black": "Shop/hoody1.jpg",
+            "red": "Shop/hoody1-red.jpg",
+            "white": "Shop/hoody1-white.jpg",
+            "blue": "Shop/hoody1-blue.jpg"
+          },
+          "color": "red",
+          "size": "s",
+          "count": 1,
+          "price": 60,
+          "category": "hoody"
+        }
+      ],
+      "price": 60,
+      "userEmail": "admin@gmail.com",
+      "date": "2023-10-13T14:01:37.637Z",
+      "id": 4
+    },
+    {
+      "name": "Назар Любчинський",
+      "email": "nazar.muxal@gmail.com",
+      "phone": "+380964312731",
+      "county": "wddw",
+      "city": "Дрогобич",
+      "street": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
+      "house": "22",
+      "flat": "22",
+      "message": "22",
+      "clothes": [
+        {
+          "id": 2,
+          "title": "Hoody Harley Queen",
+          "image": {
+            "black": "Shop/hoody2.jpg",
+            "white": "Shop/hoody2-white.jpg"
+          },
+          "color": "black",
+          "size": "s",
+          "count": 1,
+          "price": 60,
+          "category": "hoody"
+        }
+      ],
+      "price": 60,
+      "userEmail": "admin@gmail.com",
+      "date": "2023-10-13T14:22:51.247Z",
+      "id": 5
+    },
+    {
+      "name": "Назар Любчинський",
+      "email": "nazar.muxal@gmail.com",
+      "phone": "+380964312731",
+      "county": "wddw",
+      "city": "Дрогобич",
+      "street": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
+      "house": "1",
+      "flat": "1",
+      "message": "1",
+      "clothes": [
+        {
+          "id": 2,
+          "title": "Hoody Harley Queen",
+          "image": {
+            "black": "Shop/hoody2.jpg",
+            "white": "Shop/hoody2-white.jpg"
+          },
+          "color": "black",
+          "size": "s",
+          "count": 1,
+          "price": 60,
+          "category": "hoody"
+        }
+      ],
+      "price": 60,
+      "userEmail": "admin@gmail.com",
+      "date": "2023-10-13T14:29:50.419Z",
+      "id": 6
+    },
+    {
+      "name": "Назар Любчинський",
+      "email": "nazar.muxal@gmail.com",
+      "phone": "+380964312731",
+      "county": "wddw",
+      "city": "Дрогобич",
+      "street": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
+      "house": "22",
+      "flat": "22",
+      "message": "22",
+      "clothes": [
+        {
+          "id": 2,
+          "title": "Hoody Harley Queen",
+          "image": {
+            "black": "Shop/hoody2.jpg",
+            "white": "Shop/hoody2-white.jpg"
+          },
+          "color": "black",
+          "size": "s",
+          "count": 1,
+          "price": 60,
+          "category": "hoody"
+        }
+      ],
+      "price": 60,
+      "userEmail": "admin@gmail.com",
+      "date": "2023-10-13T15:08:22.669Z",
+      "id": 7
+    },
+    {
+      "name": "Назар Любчинський",
+      "email": "nazar.muxal@gmail.com",
+      "phone": "+380964312731",
+      "county": "wddw",
+      "city": "Дрогобич",
+      "street": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
+      "house": "22",
+      "flat": "222",
+      "message": "2",
+      "clothes": [
+        {
+          "id": 2,
+          "title": "Hoody Harley Queen",
+          "image": {
+            "black": "Shop/hoody2.jpg",
+            "white": "Shop/hoody2-white.jpg"
+          },
+          "color": "black",
+          "size": "s",
+          "count": 1,
+          "price": 60,
+          "category": "hoody"
+        }
+      ],
+      "price": 60,
+      "userEmail": "admin@gmail.com",
+      "date": "2023-10-13T15:24:52.156Z",
+      "id": 8
+    },
+    {
+      "name": "Назар Любчинський",
+      "email": "nazar.muxal@gmail.com",
+      "phone": "+380964312731",
+      "county": "wddw",
+      "city": "Дрогобич",
+      "street": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
+      "house": "1",
+      "flat": "1",
+      "message": "1",
+      "clothes": [
+        {
+          "id": 2,
+          "title": "Hoody Harley Queen",
+          "image": {
+            "black": "Shop/hoody2.jpg",
+            "white": "Shop/hoody2-white.jpg"
+          },
+          "color": "black",
+          "size": "s",
+          "count": 1,
+          "price": 60,
+          "category": "hoody"
+        }
+      ],
+      "price": 60,
+      "userEmail": "admin@gmail.com",
+      "date": "2023-10-13T15:26:24.387Z",
+      "id": 9
+    },
+    {
+      "name": "Назар Любчинський",
+      "email": "nazar.muxal@gmail.com",
+      "phone": "+380964312731",
+      "county": "wddw",
+      "city": "Дрогобич",
+      "street": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
+      "house": "1",
+      "flat": "1",
+      "message": "1",
       "clothes": [
         {
           "id": 2,
@@ -677,8 +1036,67 @@
       ],
       "price": 120,
       "userEmail": "admin@gmail.com",
-      "date": "2023-10-10T14:59:14.006Z",
-      "id": 1
+      "date": "2023-10-13T15:33:47.558Z",
+      "id": 10
+    },
+    {
+      "name": "Назар Любчинський",
+      "email": "nazar.muxal@gmail.com",
+      "phone": "+380964312731",
+      "county": "wddw",
+      "city": "Дрогобич",
+      "street": "https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/",
+      "house": "11",
+      "flat": "22",
+      "message": "22",
+      "clothes": [
+        {
+          "id": 3,
+          "title": "Hoody Anime",
+          "image": {
+            "black": "Shop/hoody3.jpg",
+            "white": "Shop/hoody3-white.jpg",
+            "grey": "Shop/hoody3-grey.jpg"
+          },
+          "color": "white",
+          "size": "s",
+          "count": 3,
+          "price": 10,
+          "category": "hoody"
+        },
+        {
+          "id": 3,
+          "title": "Hoody Anime",
+          "image": {
+            "black": "Shop/hoody3.jpg",
+            "white": "Shop/hoody3-white.jpg",
+            "grey": "Shop/hoody3-grey.jpg"
+          },
+          "color": "black",
+          "size": "s",
+          "count": 2,
+          "price": 10,
+          "category": "hoody"
+        },
+        {
+          "id": 3,
+          "title": "Hoody Anime",
+          "image": {
+            "black": "Shop/hoody3.jpg",
+            "white": "Shop/hoody3-white.jpg",
+            "grey": "Shop/hoody3-grey.jpg"
+          },
+          "color": "grey",
+          "size": "s",
+          "count": 1,
+          "price": 10,
+          "category": "hoody"
+        }
+      ],
+      "price": 60,
+      "userEmail": "admin@gmail.com",
+      "date": "2023-10-13T15:57:22.748Z",
+      "id": 11
     }
   ]
 }
