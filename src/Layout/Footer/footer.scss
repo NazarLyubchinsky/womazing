@@ -21,6 +21,7 @@
 	}
 	&__content {
 		display: flex;
+		gap: 1.25rem;
 		justify-content: space-between;
 		&-right {
 			display: flex;
@@ -66,29 +67,67 @@
 		}
 	}
 }
-
 @media (max-width: 62rem) {
 	.footer {
-		padding: 1.5625rem;
+		padding: 4.5rem 1.25rem 4.5rem;
 		&__nav {
-			justify-content: space-around;
+			margin-bottom: 1.5rem;
 		}
 		&__content {
-			justify-content: space-around;
+			&-right {
+				column-gap: 10.625rem;
+			}
 		}
+	}
+}
+@media (max-width: 48rem) {
+	.footer {
+		padding: 2.5rem 1.25rem 2.5rem;
+		&__content {
+			&-right {
+				column-gap: 6.625rem;
+			}
+		}
+	}
+}
+@media (max-width: 36rem) {
+	.footer {
+		padding: 1.5625rem 0;
+		&__nav{
+			margin-bottom: 1rem;
+		}
+		&__navLink{
+			display: flex;
+			flex-wrap: wrap;
+			column-gap: 1.25rem;
+		}
+		&__nav,
+		&__content {
+			justify-content: space-between;
+		}
+
 		&__content-right {
-			column-gap: 50%;
+			flex-direction: column-reverse;
+		    row-gap: 1.25rem;
 		}
 		&__content-defense {
 			margin-top: 0;
 		}
 	}
-	.footer__content-right {
-		column-gap: 10%;
-	}
 }
-@media (max-width: 48rem) {
-	.header__list {
-		display: none;
+
+@media (max-width: 28.125rem) {
+	.footer{
+		&__content{
+			flex-direction: column;
+			&-left{
+				align-items: center;
+				justify-content: space-between;
+				flex-direction: row;
+			}
+			&-pay{
+				margin: 0;
+			}
+		}
 	}
 }

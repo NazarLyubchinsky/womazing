@@ -2,10 +2,13 @@
 	display: flex;
 	column-gap: 1.25rem;
 	&__sort {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		border: 1px solid #6e9c9f;
 		background: transparent;
 		color: #6e9c9f;
-		width: 100px;
+		padding: 2px 20px;
 		height: 40px;
 		cursor: pointer;
 		transition: all 0.3s ease-in;
@@ -13,6 +16,16 @@
 		&:hover {
 			background: #6e9c9f;
 			color: white;
+		}
+	}
+}
+@media (max-width: 400px) {
+	.sorts {
+		flex-wrap: wrap;
+		gap: 1.25rem;
+		&__sort{
+			padding: 5px 20px;
+			flex: 1;
 		}
 	}
 }

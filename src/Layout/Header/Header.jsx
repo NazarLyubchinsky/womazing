@@ -9,6 +9,7 @@ import { CustomContext } from '../../utils/Context'
 import { useTranslation } from 'react-i18next'
 import ChangeLanguage from '../../components/ChangeLanguages/ChangeLanguages'
 import Logo from '../../components/Logo/Logo'
+import BurgerModal from './BurgerModal/BurgerModal'
 
 const Header = () => {
 	const { t } = useTranslation();
@@ -52,8 +53,7 @@ const Header = () => {
 								: <Link className='header__user-link' to='login'>{t("header.signIn")}</Link>
 						}
 					</div>
-
-
+			<BurgerModal/>
 				</nav>
 			</div >
 		</div >

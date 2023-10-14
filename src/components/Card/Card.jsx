@@ -10,7 +10,7 @@ const Card = ({ item, styleWidth }) => {
 	const { t } = useTranslation();
 
 	return (
-		<div style={{ width: styleWidth }} key={item.id} className='card' >
+		<div style={{ width: styleWidth }} key={item.id} className={`card ${styleWidth}`} >
 			<Link className="card__link" to={`/product/${item.id}`}>
 				<LazyLoadImage style={{ width: '100%', height: '100%' }}
 					className='card__img'

@@ -38,7 +38,7 @@ const Footer = () => {
 					<div className='footer__content-right'>
 						<p className='footer__content-defense' dangerouslySetInnerHTML={{ __html: t("footer.defense") }} />
 						<ul className='footer__content-clothes'>
-							<NavLink to='shop'>
+							<NavLink className='footer__navLink' to='shop'>
 								<ShopList className={'footer__content-item'} classNameActive={'footer__content-item_active'} />
 							</NavLink>
 						</ul>

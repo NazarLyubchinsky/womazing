@@ -1,0 +1,46 @@
+.list {
+	display: flex;
+	gap: 2rem;
+}
+.item {
+	cursor: pointer;
+	transition: opacity 0.2s ease-in;
+
+	&:hover {
+		opacity: 0.6;
+	}
+}
+.link {
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+	color: var(--dark-sea);
+	font-size: 1.125rem;
+	font-family: "Post No Bills Jaffna-Bold";
+	letter-spacing: .0938rem;
+}
+.list__modal {
+	flex-direction: column;
+}
+.user{
+	display: flex;
+	align-items: center;
+	gap: .375rem;
+}
+@media only screen and (max-width: 48rem) {
+	.list {
+		display: none;
+	}
+	.list__modal {
+		display: flex;
+	}
+}
+
+.link.active {
+	color: var(--violet);
+}
+
+
+.link__color {
+	color: #fff;
+}

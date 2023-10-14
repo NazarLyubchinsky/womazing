@@ -44,7 +44,7 @@ const Basket = () => {
 				{
 					cart.length ? cart.map((item, idx) => (
 						<React.Fragment key={idx}>
-							<BasketCard cart={cart} item={item}  />
+							<BasketCard cart={cart} item={item} />
 						</React.Fragment>
 					))
 						: <p className='basket__info-message'>{t("basket.basketText")}</p>
@@ -62,7 +62,12 @@ const Basket = () => {
 										</p> : ticket.length ? <p className='basket__ticket-message'>{ticket}</p> : ''
 									}
 								</form>
-								<button className="basket__ticket-btn" onClick={() => setCart([])}>{t("basket.updateCart")}</button>
+								<div style={{
+									display: 'flex',
+									justifyContent: 'flex-end'
+								}}>
+									<button className="basket__ticket-btn" onClick={() => setCart([])}>{t("basket.updateCart")}</button>
+								</div>
 							</div>
 
 							<div className='basket__pay'>

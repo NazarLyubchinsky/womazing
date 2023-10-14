@@ -56,7 +56,7 @@ const Shop = () => {
 				<div className='shop__sorts' >
 					{
 						user.email === 'admin@gmail.com' ? <Link to='/create' className={`sorts__sort`}>
-							добавить
+							добавить продукт
 						</Link> : <span></span>
 				}
 					<ShopSorts />
@@ -83,7 +83,7 @@ const Shop = () => {
 									}
 									return 0;
 								}).filter(FilterCategory).filter(FilterPage).map((item) => (
-									<Card styleWidth={'calc(33.33333% - 1.25rem)'} key={item.id} item={item} />
+									<Card styleWidth='styleWidth' key={item.id} item={item} />
 
 								))
 							}

@@ -99,15 +99,15 @@ const Profile = () => {
 					{
 						tab === 1
 							?
-							<div className='profile__orders'>
-								{
+							// <div className='profile__orders '>
+								
 									data.orders.map((item, idx) => (
 										<React.Fragment key={idx}>
 											<ProfileOrdersItem idx={idx} item={item} />
 										</React.Fragment>
 									))
-								}
-							</div>
+								
+							// </div>
 
 							: <div>
 								<form onSubmit={handleSubmit(changeUser)} className="profile__content">

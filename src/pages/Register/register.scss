@@ -1,4 +1,5 @@
 .register {
+	padding: 10px;
 	background: url("../../assets/UserFormbg.jpg");
 	display: flex;
 	justify-content: center;
@@ -41,8 +42,8 @@
 	&__input {
 		width: 100%;
 		height: 2.5rem;
-		padding-left: .9375rem;
-		margin: .625rem 0 .625rem;
+		padding-left: 0.9375rem;
+		margin: 0.625rem 0 0.625rem;
 		outline: none;
 		border: none;
 		&::placeholder {
@@ -53,13 +54,13 @@
 	}
 	&__btn {
 		background: var(--blue);
-		margin: .625rem auto .625rem;
+		margin: 0.625rem auto 0.625rem;
 		font-weight: 700;
 		font-size: 0.875rem;
 		line-height: 2.75rem;
 		letter-spacing: 0.0313rem;
 		color: var(--white);
-		border-radius: .625rem;
+		border-radius: 0.625rem;
 		cursor: pointer;
 		height: 2.5rem;
 		border: none;
@@ -70,5 +71,12 @@
 		font-size: 0.9375rem;
 		line-height: 150%;
 		color: var(--dark-grey);
+	}
+}
+@media (max-width: 450px) {
+	.register{
+		&__form{
+			padding: 1rem;
+		}
 	}
 }

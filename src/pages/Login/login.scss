@@ -1,4 +1,5 @@
 .login {
+	padding: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -77,5 +78,15 @@
 
 	&__link {
 		color: var(--red);
+	}
+}
+@media (max-width: 450px) {
+	.login{
+		&__form{
+			padding: 1rem;
+		}
+		&__title{
+			font-size: 1.6rem;
+		}
 	}
 }
