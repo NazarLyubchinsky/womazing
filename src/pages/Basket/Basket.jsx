@@ -41,6 +41,7 @@ const Basket = () => {
 						<li className="basket__info-item">{t("basket.total")}</li>
 					</ul>
 				</div>
+				<div className='basket__info-card'>
 				{
 					cart.length ? cart.map((item, idx) => (
 						<React.Fragment key={idx}>
@@ -49,6 +50,8 @@ const Basket = () => {
 					))
 						: <p className='basket__info-message'>{t("basket.basketText")}</p>
 				}
+				</div>
+				
 				{
 					cart.length ?
 						<>
@@ -79,7 +82,7 @@ const Basket = () => {
 										? i18n.language === 'ua' ? `${(calculateTotalPrice - calculateTotalPrice / 100 * ticket[0].discount) * 38} Грн` : `${(calculateTotalPrice - calculateTotalPrice / 100 * ticket[0].discount)} $`
 										: i18n.language === 'ua' ? `${calculateTotalPrice * 38} Грн` : `$ ${calculateTotalPrice}`
 									}  </span></button>
-									<Link to='/checkout'>
+									<Link className='basket__pay-link' to='/checkout'>
 										<button className='basket__pay-btn2'>{t("basket.checkout")}</button>
 									</Link>
 								</div>

@@ -217,18 +217,126 @@
 		&__info {
 			display: none;
 		}
-		&__product-adaptive{
-			position: relative;
-			margin-top: 50px;
-			display: flex;
-			gap: 20px;
-			padding: 20px;
-			border: 1px solid gray;
-			
+		&__product {
+			&-adaptive {
+				position: relative;
+				margin-top: 50px;
+				display: flex;
+				gap: 20px;
+				padding: 20px;
+				border: 1px solid gray;
+			}
+			&-row {
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				gap: 20px;
+				padding: 20px;
+			}
 		}
-		&__ticket{
+
+		&__ticket {
 			flex-direction: column;
 			gap: 1.5625rem;
+			margin-top: 2rem;
+			&-left {
+				flex-wrap: wrap;
+				gap: 20px;
+			}
+			&-input {
+				flex: 1;
+				min-width: 12.5rem;
+			}
+			&-btn {
+				min-width: 12.5rem;
+				flex: 1;
+			}
+		}
+		&__pay {
+			margin-top: 2rem;
+			&-header {
+				margin-right: 0;
+			}
+			&-info {
+				margin-bottom: 0.75rem;
+			}
+
+			&-btn1 {
+				padding: 0;
+				height: 3rem;
+				min-width: unset;
+			}
+			&-btns {
+				display: flex;
+				column-gap: 0.9375rem;
+				flex-direction: column;
+				gap: 20px;
+			}
+			&-link {
+				text-align: end;
+			}
+		}
+	}
+}
+@media (min-width: 900px) {
+	.basket__product-adaptive {
+		display: none;
+	}
+}
+
+@media (max-width: 576px) {
+	.basket {
+		&__info-card {
+			:last-child {
+				margin-right: 0;
+			}
+			display: flex;
+			
+			overflow-x: scroll;
+			&::-webkit-scrollbar {
+				height: 3px;
+			}
+
+			&::-webkit-scrollbar-track {
+				background-color: #f1f1f1;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background-color: #888;
+				border-radius: 5px;
+			}
+
+			&::-webkit-scrollbar-thumb:hover {
+				background-color: #555;
+			}
+		}
+		&__product {
+			&-adaptive {
+				margin-top: 1.25rem;
+				gap: 1.25rem;
+				// min-width: 100%;
+				display: block;
+				padding: 2.125rem 2.125rem 1rem 2.125rem;
+				margin-right: 1.25rem;
+				margin-bottom: 0.625rem;
+			}
+			&-row {
+				width: 300px;
+				display: block;
+				padding: 0;
+			}
+		}
+	}
+}
+@media (max-width: 400px) {
+	.basket {
+		&__product {
+			&-adaptive {
+				min-width: 100%;
+			}
+			&-row {
+				width: 100%;
+			}
 		}
 	}
 }

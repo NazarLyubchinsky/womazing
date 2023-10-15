@@ -10,6 +10,9 @@
 	font-style: normal;
 	color: var(--black-color);
 }
+
+
+
 .container {
 	width: 100%;
 	max-width: 69.375rem;
@@ -49,21 +52,20 @@
 
 @import "../Layout/Header/header.scss";
 @import "../Layout/Header/BurgerModal/BurgerModal.scss";
-@import "../Layout/Header/BurgerModal/NavigateList/NavigateList.scss"; 
+@import "../Layout/Header/BurgerModal/NavigateList/NavigateList.scss";
 
-@import "../Layout/Footer/footer.scss"; 
+@import "../Layout/Footer/footer.scss";
 
 @import "../pages/Register/register.scss";
-@import "../pages/Login/login.scss"; 
+@import "../pages/Login/login.scss";
 
 @import "../pages/Shop/shop.scss";
 @import "../pages/Shop/ShopList/shopList.scss";
 @import "../pages/Shop/QuantityGoods/quantityGoods.scss";
-@import "../pages/Shop/ShopSorts/ShopSorts.scss"; //+
+@import "../pages/Shop/ShopSorts/ShopSorts.scss";
 
 @import "../pages/Basket/basket.scss";
-@import "../pages/Product/Product.scss";
-@import "../pages/Product/SliderProduct/SliderProduct.scss";
+@import "../pages/Product/Product.scss"; //+
 
 @import "../pages/Checkout/Checkout.scss";
 

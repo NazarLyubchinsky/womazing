@@ -5,13 +5,11 @@
 		line-height: 140%;
 		letter-spacing: 0.02em;
 		margin-bottom: 1.5625rem;
-	
-	
 	}
 	&__buyer {
 		display: flex;
 		column-gap: 180px;
-		margin:  2.9375rem 0;
+		margin: 2.9375rem 0;
 		&-price {
 			width: 100px;
 		}
@@ -127,7 +125,7 @@
 			border-bottom: 1px solid black;
 			outline: none;
 			min-height: 4.5rem;
-			
+
 			&::placeholder {
 				font-weight: 500;
 				font-size: 17px;
@@ -161,31 +159,111 @@
 }
 
 @media (max-width: 1024px) {
-	.checkout {
-		padding: 90px 0 61px;
-	}
-	.checkout__buyer-cart {
+	.checkoutForm{
+		display: flex;
 		flex-direction: column;
+		gap: 1.5rem;
 	}
-	.checkout__buyer-cart-img {
-		width: 100%;
+	.checkout {
+		&__buyer {
+			&-item {
+				display: none;
+			}
+			&-cart {
+				flex-direction: column;
+				&-img {
+					width: 100%;
+				}
+				&-info {
+					padding: 0.625rem;
+				}
+			}
+			&-product-text {
+				width: 100%;
+			}
+			&-form{
+				width: 100%;
+			}
+		}
 	}
 }
 @media (max-width: 992px) {
-	.checkout__buyer {
-		column-gap: 55px;
-		margin: 80px 0 0;
-	}
-	.checkout__address {
-		display: flex;
-		column-gap: 140px;
-	}
-	.checkout__address-btn {
-		background: #6e9c9f;
-		padding: 10px 12px;
-	}
-	.title {
-		font-size: 40px;
+	.checkout {
+		&__buyer {
+			column-gap: 55px;
+			margin: 80px 0 0;
+		}
+		&__address {
+			display: flex;
+			column-gap: 140px;
+		}
+		&__address-btn {
+			background: #6e9c9f;
+			padding: 10px 12px;
+		}
 	}
 }
+@media (max-width: 768px) {
+	.checkout {
+		&__buyer {
+			gap: .9375rem;
+			flex-direction: column-reverse;
+			&-cart{
+				min-width: calc(50% - 10px);
+			}
+			&-list {
+				padding-bottom: 10px;
+				flex-direction: row;
+				gap: 1.25rem;
+				overflow-x: scroll;
+				&::-webkit-scrollbar {
+					height: 3px;
+				}
 
+				&::-webkit-scrollbar-track {
+					background-color: #f1f1f1;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					background-color: #888;
+					border-radius: 5px;
+				}
+
+				&::-webkit-scrollbar-thumb:hover {
+					background-color: #555;
+				}
+			}
+			&-left {
+				width: 100%;
+			}
+			&-form{
+				row-gap: 1.5rem;
+			}
+		}
+		&__address{
+			flex-direction: column;
+			&-form{
+				width: 100%;
+				row-gap: 1.5rem;
+			}
+			&-left {
+				padding-top: 1.5rem;
+			}
+		}
+	}
+}
+@media (max-width: 690px) {
+	.checkout__buyer-cart{
+		min-width: 70%;
+	}
+}
+@media (max-width: 550px) {
+	.checkout__buyer-cart{
+		min-width: 90%;
+	}
+}
+@media (max-width: 390px) {
+	.checkout__buyer-cart{
+		min-width: 100%;
+	}
+}

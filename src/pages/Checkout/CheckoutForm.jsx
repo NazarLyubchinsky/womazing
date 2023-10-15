@@ -63,7 +63,7 @@ const CheckoutForm = () => {
 
 	};
 	return (
-		<form onSubmit={handleSubmit(addOrder)}>
+		<form className='checkoutForm' onSubmit={handleSubmit(addOrder)}>
 			<div className="checkout__buyer">
 				<div className="checkout__buyer-form">
 					<h3 className="checkout__title"

@@ -15,7 +15,6 @@ const SliderProduct = () => {
 		<>
 			<Swiper
 				slidesPerView={2}
-				spaceBetween={40}
 				navigation={true}
 				loop={true}
 				autoPlay={true}
@@ -28,16 +27,24 @@ const SliderProduct = () => {
 				}}
 				modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
 				className="mySwiper"
-				style={{
-					maxHeight: '650px',
-					height: '100vh'
+				breakpoints={{
+					640: {
+						slidesPerView: 1
+					},
+					// when window width is >= 768px
+					768: {
+						slidesPerView: 2
+					},
 				}}
 			>
 				{
 					shop.filter(item => {
 						return item.category === product.category && item.id !== product.id
 					}).map(item => (
-						<SwiperSlide
+						<SwiperSlide style={{
+							display: "flex",
+							justifyContent: 'center',
+						}}
 							key={item.id}>
 							<Card styleWidth={'calc(100% - 33px)'} item={item} />
 						</SwiperSlide>

@@ -38,17 +38,21 @@ const BasketCard = ({ item }) => {
 				</ul>
 				<p className='basket__product-mark' onClick={() => deleteCart(item.id, item.color, item.size)}><ImCross /></p>
 			</div>
+
+			{/* media 992px */}
 			<div className="basket__product-adaptive">
-				<img className='profile__orders-image' src={item.image[item.color]} alt="" />
-				<div className='profile__orders-block'>
-					<p className='profile__orders-info'>Название : <br /> <span className='profile__orders-span'>{item.title}</span> </p>
-					<p className='profile__orders-info'>Категория : <br /> <span className='profile__orders-span'>{item.category}</span> </p>
-					<p className='profile__orders-info'>цвет : <br /> <span className='profile__orders-span'>{item.color}</span></p>
-					<p className='profile__orders-info'>Размер : <br /> <span className='profile__orders-span'>{item.size}</span> </p>
-					<p className='profile__orders-info'>Кол-во :  <br /> <span className='profile__orders-span'>{item.count}</span></p>
-					<p className='profile__orders-info'>Цена : <br /> <span className='profile__orders-span'>{item.price}$</span> </p>
+				<div className='basket__product-row'>
+					<img className='profile__orders-image' src={item.image[item.color]} alt="" />
+					<div className='profile__orders-block'>
+						<p className='profile__orders-info'>Название : <br /> <span className='profile__orders-span'>{item.title}</span> </p>
+						<p className='profile__orders-info'>Категория : <br /> <span className='profile__orders-span'>{item.category}</span> </p>
+						<p className='profile__orders-info'>цвет : <br /> <span className='profile__orders-span'>{item.color}</span></p>
+						<p className='profile__orders-info'>Размер : <br /> <span className='profile__orders-span'>{item.size}</span> </p>
+						<p className='profile__orders-info'>Кол-во :  <br /> <span className='profile__orders-span'>{item.count}</span></p>
+						<p className='profile__orders-info'>Цена : <br /> <span className='profile__orders-span'>{item.price}$</span> </p>
+					</div>
+					<p className='basket__product-mark' onClick={() => deleteCart(item.id, item.color, item.size)}><ImCross /></p>
 				</div>
-				<p className='basket__product-mark' onClick={() => deleteCart(item.id, item.color, item.size)}><ImCross /></p>
 			</div>
 		</>
 	);

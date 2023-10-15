@@ -49,11 +49,11 @@ const Product = () => {
 									<>
 										{sale ? <input className='product__content-inputSale' placeholder='%' value={saleCount} onChange={(e) => setSaleCount(e.target.value)} type="number" /> : ''}
 
-										<button  className='product__content-btnSale'  type='button' onClick={() => {
+										<button className='product__content-btnSale' type='button' onClick={() => {
 											if (sale) {
 												const discountedPrice = product.price - (product.price / 100 * saleCount);
 												const roundedDiscountedPrice = parseFloat(discountedPrice.toFixed(2));
-												axios.patch(`http://localhost:8080/clothes/${product.id}`, { priceSale: roundedDiscountedPrice  })
+												axios.patch(`http://localhost:8080/clothes/${product.id}`, { priceSale: roundedDiscountedPrice })
 													.then(() => {
 														getAllClothes();
 														setSaleCount(0)
@@ -64,7 +64,9 @@ const Product = () => {
 									</>
 									: ''
 							}
-							<PriceSale saleCount={saleCount} item={product} />
+							<div>
+								<PriceSale saleCount={saleCount} item={product} />
+							</div>
 							<p className='product__content-choose'>{t("product.selectSize")}</p>
 							<ul className='product__content-sizes'>
 								{
@@ -82,7 +84,7 @@ const Product = () => {
 								}
 							</ul>
 							{
-								product.inStock ? <p className='product__content-choose'>{t("separate.inStock")}: {product.inStock}</p> : <p className='product__content-choose'>{t("separate.notStock")}</p>
+								product.inStock ? <p className='product__content-choose product__content-choose_position'>{t("separate.inStock")}: {product.inStock}</p> : <p className='product__content-choose'>{t("separate.notStock")}</p>
 							}
 							<div className='product__content-form'>
 								{user.login ? (
