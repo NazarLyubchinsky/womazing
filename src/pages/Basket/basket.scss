@@ -220,18 +220,18 @@
 		&__product {
 			&-adaptive {
 				position: relative;
-				margin-top: 50px;
+				margin-top: 3.125rem;
 				display: flex;
-				gap: 20px;
-				padding: 20px;
+				gap: 1.25rem;
+				padding: 1.25rem;
 				border: 1px solid gray;
 			}
 			&-row {
 				width: 100%;
 				display: flex;
 				justify-content: space-between;
-				gap: 20px;
-				padding: 20px;
+				gap: 1.25rem;
+				padding: 1.25rem;
 			}
 		}
 
@@ -241,7 +241,7 @@
 			margin-top: 2rem;
 			&-left {
 				flex-wrap: wrap;
-				gap: 20px;
+				gap: 1.25rem;
 			}
 			&-input {
 				flex: 1;
@@ -270,7 +270,7 @@
 				display: flex;
 				column-gap: 0.9375rem;
 				flex-direction: column;
-				gap: 20px;
+				gap: 1.25rem;
 			}
 			&-link {
 				text-align: end;
@@ -321,7 +321,7 @@
 				margin-bottom: 0.625rem;
 			}
 			&-row {
-				width: 300px;
+				width: 18.75rem;
 				display: block;
 				padding: 0;
 			}

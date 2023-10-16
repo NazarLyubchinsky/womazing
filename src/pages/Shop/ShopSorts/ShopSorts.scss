@@ -8,8 +8,8 @@
 		border: 1px solid #6e9c9f;
 		background: transparent;
 		color: #6e9c9f;
-		padding: 2px 20px;
-		height: 40px;
+		padding: 2px 1.25rem;
+		height: 2.5rem;
 		cursor: pointer;
 		transition: all 0.3s ease-in;
 		&.active,
@@ -24,7 +24,7 @@
 		flex-wrap: wrap;
 		gap: 1.25rem;
 		&__sort{
-			padding: 5px 20px;
+			padding: .3125rem 1.25rem;
 			flex: 1;
 		}
 	}

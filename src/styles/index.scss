@@ -50,6 +50,12 @@
 	}
 }
 
+@import "../pages/Home/New/New.scss";  
+@import "../pages/Home/Collection/Collection.scss";  
+@import "../pages/Home/Important/important.scss";  
+@import "../pages/Home/Team/team.scss";  
+
+
 @import "../Layout/Header/header.scss";
 @import "../Layout/Header/BurgerModal/BurgerModal.scss";
 @import "../Layout/Header/BurgerModal/NavigateList/NavigateList.scss";
@@ -65,15 +71,16 @@
 @import "../pages/Shop/ShopSorts/ShopSorts.scss";
 
 @import "../pages/Basket/basket.scss";
-@import "../pages/Product/Product.scss"; //+
+@import "../pages/Product/Product.scss"; 
 
 @import "../pages/Checkout/Checkout.scss";
 
-@import "../pages/Profile/profile.scss"; //+
+@import "../pages/Profile/profile.scss";
 
-@import "../pages/CreateProduct/CreateProduct.scss";
+@import "../pages/CreateProduct/CreateProduct.scss"; 
 
-@import "../pages/Order/order.scss";
+@import "../pages/Order/order.scss";  
+
 
 @import "../components/ChangeLanguages/ChangeLanguages.scss";
 @import "../components/BackToHome/BackToHome.scss";

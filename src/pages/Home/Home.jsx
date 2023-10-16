@@ -1,12 +1,17 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next';
+import Collection from './Collection/Collection';
+import Important from './Important/Important';
+import New from './New/New';
+import Team from './Team/Team';
 
 const Home = () => {
-	const { t } = useTranslation()
 	return (
-		<div>
-			<h2 className='new__title' dangerouslySetInnerHTML={{ __html: t("home.new.title") }} />
-		</div>
+		<>
+			<New />
+			<Collection />
+			<Important />
+			<Team />
+		</>
 	)
 }
 

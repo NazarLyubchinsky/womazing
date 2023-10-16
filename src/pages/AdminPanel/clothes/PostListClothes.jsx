@@ -1,5 +1,6 @@
+import { useMediaQuery } from '@mui/material';
 import React from 'react';
-import { List, Datagrid, DeleteButton, TextField, EditButton, TextInput} from 'react-admin';
+import { List, Datagrid, DeleteButton, TextField, EditButton, TextInput, SimpleList } from 'react-admin';
 
 
 const postFilters = [
@@ -10,18 +11,29 @@ const postFilters = [
 ];
 
 const PostListClothes = () => {
+	const isSmall = useMediaQuery((theme) => theme.breakpoints.down("md"));
 	return (
 		<List filters={postFilters}>
-			<Datagrid>
-				<TextField source="id" />
-				<TextField source="title" />
-				<TextField source="price" />
-				<TextField source="priceSale" />
-				<TextField source="category" />
+			{isSmall ? (
+		 <SimpleList
+		 primaryText={(record) => record.id}
+		 secondaryText={(record) => record.title}
+		 tertiaryText={(record) => record.price}
+	/>
 
-				<EditButton />
-				<DeleteButton />
-			</Datagrid>
+
+			) : (
+				<Datagrid>
+					<TextField source="id" />
+					<TextField source="title" />
+					<TextField source="price" />
+					<TextField source="priceSale" />
+					<TextField source="category" />
+
+					<EditButton />
+					<DeleteButton />
+				</Datagrid>
+			)}
 		</List>
 	);
 };

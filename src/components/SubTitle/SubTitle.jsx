@@ -19,8 +19,8 @@ const SubTitle = ({ page, shop, category, name, order, checkout }) => {
 						setPage(1)
 						setStatus(category)
 					}}>{category}</Link>
-						: checkout ? <Link className='navigations__shop' to='/checkout'>{checkout}</Link>
-					: <Link className='navigations__shop' to='/shop'>{shop}</Link> 
+					: checkout ? <Link className='navigations__shop' to='/checkout'>{checkout}</Link>
+						: <Link className='navigations__shop' to='/shop'>{shop}</Link>
 			}
 			{
 				name ? (
@@ -28,10 +28,10 @@ const SubTitle = ({ page, shop, category, name, order, checkout }) => {
 						-
 						<p className='navigations__name'>{name}</p>
 					</>
-				) : order ? 	<>
-				-
-				<p className='navigations__name'>{order}</p>
-			</>: null
+				) : order ? <>
+					-
+					<p className='navigations__name'>{order}</p>
+				</> : null
 			}
 
 

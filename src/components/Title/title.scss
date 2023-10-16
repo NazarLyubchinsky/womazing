@@ -8,18 +8,29 @@
 	margin-top: 5.875rem;
 }
 @media (max-width: 48rem) {
-.title{
-	font-size: 2.8125rem;
+	.title {
+		font-size: 2.8125rem;
+	}
 }
-}
+
 @media (max-width: 36rem) {
-	.title{
+	.title {
+		margin-top: 2rem;
 		font-size: 2rem;
-		margin-top: 2.5rem;
 	}
+}
+@media (max-width: 28.125rem) {
+	.title {
+		font-size: 1.8rem;
 	}
-	@media (max-width: 23rem) {
-		.title{
-			font-size: 1.6rem;
-		}
-		}
+}
+@media (max-width: 390px) {
+	.title {
+		font-size: 1.4rem;
+	}
+}
+// @media (max-width: 23rem) {
+// 	.title {
+// 		font-size: 1rem;
+// 	}
+// }

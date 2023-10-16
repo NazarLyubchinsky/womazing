@@ -56,7 +56,7 @@ const Shop = () => {
 				<div className='shop__sorts' >
 					{
 						user.email === 'admin@gmail.com' ? <Link to='/create' className={`sorts__sort`}>
-							добавить продукт
+						{t("shop.AddProduct")}
 						</Link> : <span></span>
 				}
 					<ShopSorts />

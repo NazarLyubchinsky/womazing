@@ -1,14 +1,60 @@
 .navigations {
 	display: flex;
+	align-items: center;
 	gap: 0.8125rem;
-	&__main{
-		max-width: 5rem
+	&__main {
+		max-width: 5rem;
 	}
-	&__main, &__category, &__shop {
+	&__main,
+	&__category,
+	&__shop {
 		@extend .hoverOpacity;
 	}
-	&__page, &__name{
+	&__page,
+	&__name {
+		display: flex;
+		white-space: nowrap;
 		color: var(--grey);
 	}
 }
 
+@media (max-width: 36rem) {
+	.navigations {
+		&__shop {
+			max-width: 140px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	}
+}
+@media (max-width: 28.125rem) {
+	.navigations {
+		&__main,
+		&__category,
+		&__shop,
+		&__name {
+			font-size: .875rem;
+		}
+	}
+}
+@media (max-width: 23.125rem) {
+	.navigations {
+		&__main,
+		&__category,
+		&__shop,
+		&__name {
+			font-size: .8125rem;
+		}
+	}
+}
+@media (max-width: 21.875rem) {
+	.navigations {
+		&__main,
+		&__category,
+		&__shop,
+		&__name {
+			font-size: .75rem;
+		}
+	}
+}

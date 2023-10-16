@@ -1,23 +1,23 @@
 .checkout {
 	&__title {
 		font-weight: 500;
-		font-size: 25px;
+		font-size: 1.5625rem;
 		line-height: 140%;
 		letter-spacing: 0.02em;
 		margin-bottom: 1.5625rem;
 	}
 	&__buyer {
 		display: flex;
-		column-gap: 180px;
+		column-gap: 11.25rem;
 		margin: 2.9375rem 0;
 		&-price {
-			width: 100px;
+			width: 6.25rem;
 		}
 		&-cart {
 			background: #6e9c9f;
 			color: white;
 			display: flex;
-			column-gap: 10px;
+			column-gap: .625rem;
 			&-img {
 				width: 40%;
 			}
@@ -25,29 +25,29 @@
 				display: flex;
 				flex-direction: column;
 				width: 100%;
-				gap: 10px;
+				gap: .625rem;
 			}
 			&-top {
 				display: flex;
-				padding-right: 10px;
+				padding-right: .625rem;
 				flex-direction: column;
-				gap: 10px;
+				gap: .625rem;
 			}
 		}
 		&-form {
 			width: 40%;
 			display: flex;
 			flex-direction: column;
-			row-gap: 35px;
+			row-gap: 2.1875rem;
 		}
 		&-input {
 			border: none;
 			border-bottom: 1px solid black;
-			padding-bottom: 16px;
+			padding-bottom: 1rem;
 			outline: none;
 			&::placeholder {
 				font-weight: 500;
-				font-size: 17px;
+				font-size: 1.0625rem;
 				line-height: 140%;
 				letter-spacing: 0.02em;
 				color: #868686;
@@ -66,14 +66,14 @@
 			justify-content: space-between;
 			align-items: center;
 			&_act {
-				height: 57px;
-				padding: 8px;
+				height: 3.5625rem;
+				padding: .5rem;
 				background: #f1eadc;
 			}
 		}
 		&-info {
 			font-weight: 500;
-			font-size: 20px;
+			font-size: 1.25rem;
 			line-height: 140%;
 			letter-spacing: 0.02em;
 			width: 100%;
@@ -81,7 +81,7 @@
 		&-product {
 			text-align: left;
 			font-weight: 500;
-			font-size: 17px;
+			font-size: 1.0625rem;
 			line-height: 140%;
 			letter-spacing: 0.02em;
 		}
@@ -89,7 +89,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			margin-top: 10px;
+			margin-top: .625rem;
 		}
 		&-product-text {
 			width: 50%;
@@ -99,21 +99,21 @@
 	}
 	&__address {
 		display: flex;
-		column-gap: 295px;
+		column-gap: 18.4375rem;
 		&-form {
 			width: 40%;
 			display: flex;
 			flex-direction: column;
-			row-gap: 35px;
+			row-gap: 2.1875rem;
 		}
 		&-input {
 			border: none;
 			border-bottom: 1px solid black;
-			padding-bottom: 16px;
+			padding-bottom: 1rem;
 			outline: none;
 			&::placeholder {
 				font-weight: 500;
-				font-size: 17px;
+				font-size: 1.0625rem;
 				line-height: 140%;
 				letter-spacing: 0.02em;
 				color: #868686;
@@ -128,7 +128,7 @@
 
 			&::placeholder {
 				font-weight: 500;
-				font-size: 17px;
+				font-size: 1.0625rem;
 				line-height: 140%;
 				letter-spacing: 0.02em;
 				color: #868686;
@@ -137,19 +137,19 @@
 		&-check {
 			display: flex;
 			align-items: center;
-			column-gap: 20px;
-			margin-bottom: 47px;
+			column-gap: 1.25rem;
+			margin-bottom: 2.9375rem;
 		}
 		&-left {
-			padding-top: 85px;
+			padding-top: 5.3125rem;
 		}
 		&-btn {
 			background: #6e9c9f;
-			padding: 22px 50px;
+			padding: 1.375rem 3.125rem;
 			border: none;
 			cursor: pointer;
 			font-weight: 400;
-			font-size: 17px;
+			font-size: 1.0625rem;
 			line-height: 138.9%;
 			text-align: center;
 			letter-spacing: 0.02em;
@@ -191,15 +191,15 @@
 	.checkout {
 		&__buyer {
 			column-gap: 55px;
-			margin: 80px 0 0;
+			margin: 5rem 0 0;
 		}
 		&__address {
 			display: flex;
-			column-gap: 140px;
+			column-gap: 8.75rem;
 		}
 		&__address-btn {
 			background: #6e9c9f;
-			padding: 10px 12px;
+			padding: .625rem .75rem;
 		}
 	}
 }
@@ -212,7 +212,7 @@
 				min-width: calc(50% - 10px);
 			}
 			&-list {
-				padding-bottom: 10px;
+				padding-bottom: .625rem;
 				flex-direction: row;
 				gap: 1.25rem;
 				overflow-x: scroll;

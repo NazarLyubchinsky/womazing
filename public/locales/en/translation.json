@@ -178,7 +178,8 @@
 		"sweatshirt": "Sweatshirts",
 		"tshort": "T-Shorts",
 		"hoody": "hoodies",
-		"discountText": "There are no discounts for this category!"
+		"discountText": "There are no discounts for this category!",
+		"AddProduct": "Add a product"
 	},
 	"footer": {
 		"defense": "© All rights reserved <br/> Privacy Policy <br/> Public offer <br/>",
