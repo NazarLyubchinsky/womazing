@@ -97,7 +97,7 @@ const Shop = () => {
 				<QuantityGoods shop={shop} FilterCategory={FilterCategory} FilterPage={FilterPage} />
 
 				{
-					shop.filter(FilterCategory).length > 9 ? <PaginationMemo style={{
+					shop.filter(FilterCategory).length > 9 ? <Pagination style={{
 						display: 'flex',
 						justifyContent: 'center'
 					}} simple onChange={setPage} current={page} total={shop.filter(FilterCategory).length} pageSize={9} /> : ''
@@ -109,7 +109,6 @@ const Shop = () => {
 }
 
 const ShopListMemo = memo(ShopList);
-const PaginationMemo = memo(Pagination);
 
 
 export default Shop

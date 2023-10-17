@@ -1,0 +1,82 @@
+.about {
+	&__wrapper {
+		margin-top: 1.25rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+	&__content {
+		display: flex;
+		gap: 5.875rem;
+		align-items: center;
+	}
+	&__title {
+		font-weight: 500;
+		font-size: 1.5625rem;
+		line-height: 140%;
+		letter-spacing: 0.02em;
+		margin-bottom: 2.875rem;
+	}
+	&__text {
+		font-weight: 500;
+		font-size: 1.0625rem;
+		line-height: 140%;
+		letter-spacing: 0.02em;
+	}
+	&__go{
+		margin-top: 1.25rem;
+		display: flex;
+		justify-content: center;
+	}
+	&__btn {
+		font-size: 1.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #6e9c9f;
+		background: transparent;
+		color: #6e9c9f;
+		padding: 2rem 2.25rem;
+		height: 2.5rem;
+		cursor: pointer;
+		transition: all 0.3s ease-in;
+		@extend .hoverBackgrounColor;
+	}
+}
+@media (max-width: 992px) {
+	.about {
+		&__wrapper{
+			gap: 2rem;
+		}
+		&__inner {
+			width: 100%;
+		}
+		&__inner2 {
+			width: 100%;
+		}
+	}
+}
+@media (max-width: 767px) {
+	.about {
+		&__inner2 {
+			width: 100%;
+		}
+		&__content {
+			flex-direction: column;
+			row-gap: 1.25rem;
+			&-reverse{
+			flex-direction: column-reverse;
+				
+			}
+			span {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.idea__inner2 {
+		width: 100%;
+	}
+}

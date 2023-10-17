@@ -1,12 +1,12 @@
 .important {
-	padding-bottom: 130px;
+	padding-bottom: 8.125rem;
 	&__title {
 		font-weight: 500;
-		font-size: 40px;
+		font-size: 2.5rem;
 		line-height: 110%;
 		letter-spacing: 0.02em;
 		color: #000000;
-		margin-bottom: 91px;
+		margin-bottom: 5.6875rem;
 	}
 	&__content {
 		display: flex;
@@ -17,15 +17,15 @@
 		}
 		&-info {
 			font-weight: 500;
-			font-size: 25px;
+			font-size: 1.5625rem;
 			line-height: 140%;
 			letter-spacing: 0.02em;
 			color: #000000;
-			margin: 37px 0 24px;
+			margin: 2.3125rem 0 1.5rem;
 		}
 		&-text {
 			font-weight: 500;
-			font-size: 17px;
+			font-size: 1.0625rem;
 			line-height: 140%;
 			letter-spacing: 0.02em;
 			color: #000000;

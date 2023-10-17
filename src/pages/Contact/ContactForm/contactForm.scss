@@ -1,0 +1,82 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	row-gap: 35px;
+
+	&__title {
+		font-weight: 500;
+		font-size: 25px;
+		line-height: 140%;
+		letter-spacing: 0.02em;
+		margin-bottom: 62px;
+	}
+	&__block {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+	&__input {
+		flex: 1;
+		min-width: 21.25rem;
+		border: none;
+		border-bottom: 1px solid #000000;
+		outline: none;
+		padding-bottom: 16px;
+		&::placeholder {
+			font-weight: 500;
+			font-size: 17px;
+			line-height: 140%;
+			letter-spacing: 0.02em;
+			color: #868686;
+		}
+	}
+	&__message {
+		width: 100%;
+		border: none;
+		border-bottom: 1px solid #000000;
+		outline: none;
+		resize: none;
+		padding-bottom: 110px;
+
+		&::placeholder {
+			font-weight: 500;
+			font-size: 17px;
+			line-height: 140%;
+			letter-spacing: 0.02em;
+			color: #868686;
+		}
+	}
+	&__btn {
+		background: #6e9c9f;
+		width: 189px;
+		height: 68px;
+		font-weight: 400;
+		font-size: 17px;
+		line-height: 138.9%;
+		text-align: center;
+		letter-spacing: 0.02em;
+		color: #ffffff;
+		border: none;
+		cursor: pointer;
+	}
+	&__btn2 {
+		padding: 10px 10px;
+		height: 68px;
+		cursor: pointer;
+		border: none;
+		background: #f1eadc;
+		font-weight: 500;
+		font-size: 17px;
+		line-height: 140%;
+		letter-spacing: 0.02em;
+		color: #000000;
+	}
+}
+@media (max-width: 576px) {
+	.form {
+		&__input {
+			min-width: 100%;
+		}
+	}
+}
