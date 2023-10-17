@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import Card from '../../../components/Card/Card';
 import { useContext } from 'react';
 import { CustomContext } from '../../../utils/Context';
+import Title from '../../../components/Title/Title';
 
 const Collection = () => {
 	const { t } = useTranslation();
@@ -13,12 +14,13 @@ const Collection = () => {
 	return (
 		<section className='collection'>
 			<div className="container">
-				<h2 className="collection__title">{t("home.collection.title")}</h2>
+				<Title title={t("home.collection.title")} />
+				{/* <h2 className="collection__title">{t("home.collection.title")}</h2> */}
 				<div className="collection__content">
 					{
-						shop.slice(0, 2).map((el) => (
+						shop.slice(0, 3).map((el) => (
 							<React.Fragment key={el.id}>
-								<Card item={el} />
+								<Card item={el} styleWidth='styleWidth' />
 							</React.Fragment>
 						))
 					}

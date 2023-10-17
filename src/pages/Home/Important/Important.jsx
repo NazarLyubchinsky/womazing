@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { useTranslation } from "react-i18next";
 import Card from '../../../components/Card/Card';
+import Title from '../../../components/Title/Title';
 import { CustomContext } from '../../../utils/Context';
 
 const Important = () => {
@@ -11,12 +12,12 @@ const Important = () => {
 	return (
 		<section className='important'>
 			<div className="container">
-				<h2 className="important__title">{t("home.important.title")}</h2>
+				<Title title={t("home.important.title")} />
 				<div className="important__content">
 					{
-						shop.slice(4, 6).map((el) => (
+						shop.slice(4, 7).map((el) => (
 							<React.Fragment key={el.id}>
-								<Card item={el} />
+								<Card item={el} styleWidth='styleWidth' />
 							</React.Fragment>
 						))
 					}

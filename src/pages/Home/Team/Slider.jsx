@@ -33,7 +33,7 @@ const Slider = () => {
 				autoplay={{ delay: 3000 }}
 				modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
 				speed={3000}
-				className="mySwiper"
+				className="Swiper"
 			>
 				<SwiperSlide>
 					<div className="team__content-left">

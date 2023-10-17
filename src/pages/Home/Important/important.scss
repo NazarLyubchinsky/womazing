@@ -11,7 +11,7 @@
 	&__content {
 		display: flex;
 		flex-wrap: wrap;
-		column-gap: 75px;
+		gap: 1.875rem;
 		&-card {
 			width: calc(33.33333% - 50px);
 		}
@@ -34,6 +34,7 @@
 }
 @media (max-width: 992px) {
 	.important {
+		padding-bottom: 5.625rem;
 		&__content-card {
 			width: 50%;
 			display: flex;
@@ -43,5 +44,10 @@
 			text-align: center;
 			margin: 0 auto;
 		}
+	}
+}
+@media (max-width: 768px) {
+	.important {
+		padding-bottom: 2rem;
 	}
 }

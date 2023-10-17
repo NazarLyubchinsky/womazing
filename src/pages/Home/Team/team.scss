@@ -50,6 +50,15 @@
 @media (max-width: 992px) {
 	.team {
 		&__content {
+			flex-direction: column-reverse;
+			&-text {
+				padding-top: 0;
+			}
+			&-right {
+				width: 100%;
+				text-align: center;
+				margin-bottom: 1.25rem;
+			}
 			&-info {
 				font-size: 15px;
 			}
@@ -58,11 +67,17 @@
 }
 @media (max-width: 767px) {
 	.team {
+		padding-bottom: 4.375rem;
 		&__content {
-			flex-wrap: wrap;
-			&-right {
-				width: 100%;
+			&-text {
+				font-size: 1.25rem;
 			}
 		}
+	}
+}
+
+@media (max-width: 576px) {
+	.team {
+		padding-bottom: 2rem;
 	}
 }

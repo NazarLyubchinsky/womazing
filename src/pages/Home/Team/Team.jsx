@@ -2,13 +2,14 @@ import React from 'react';
 import Slider from "./Slider";
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom'
+import Title from '../../../components/Title/Title';
 
 const Team = () => {
 	const { t } = useTranslation();
 	return (
 		<section className='team'>
 			<div className="container">
-				<h2 className="team__title">{t("home.team.title")}</h2>
+				<Title title={t("home.team.title")} />
 				<div className="team__content">
 					<Slider />
 					<div className="team__content-right">
