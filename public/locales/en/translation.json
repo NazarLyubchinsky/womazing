@@ -5,7 +5,9 @@
 		"from": "from",
 		"products": "products",
 		"inStock": "in stock",
-		"notStock": "Not in stock"
+		"notStock": "Not in stock",
+		"couponDiscount": "You have been provided a coupon for a product discount",
+		"yourCoupon":"Your coupon"
 	},
 	"header": {
 		"link1": "Main",

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './adminPanel.scss'
 import { Admin, Resource } from 'react-admin';
 // import restProvider from 'ra-data-simple-rest';
@@ -12,10 +12,14 @@ import PostListOrders from './orders/PostListOrders';
 import EditOrders from './orders/EditOrders';
 
 
-import jsonServerProvider from 'ra-data-json-server'; 
-const dataProvider = jsonServerProvider('http://localhost:8080'); 
+import jsonServerProvider from 'ra-data-json-server';
+import { CustomContext } from '../../utils/Context';
+// const dataProvider = jsonServerProvider('http://localhost:8080');
 
 const AdminPanel = () => {
+	const { API_BASE_URL } = useContext(CustomContext)
+
+	const dataProvider = jsonServerProvider(`${API_BASE_URL}`);
 	return (
 		<section className='adminPanel'>
 			<Admin dataProvider={dataProvider}>

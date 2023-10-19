@@ -142,8 +142,9 @@
 			}
 		}
 		&-message {
+			color: red;
 			position: absolute;
-			bottom: -100px;
+			bottom: -70px;
 			font-size: 1.375rem;
 		}
 		&-btn {
@@ -215,6 +216,7 @@
 		}
 	}
 }
+
 @media (max-width: 900px) {
 	.basket {
 		&__product,
@@ -249,11 +251,14 @@
 			}
 			&-input {
 				flex: 1;
-				min-width: 12.5rem;
+				min-width: 15.5rem;
 			}
 			&-btn {
-				min-width: 12.5rem;
+				min-width: 15.5rem;
 				flex: 1;
+			}
+			&-message{
+			position: unset;
 			}
 		}
 		&__pay {

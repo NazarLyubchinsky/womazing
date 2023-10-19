@@ -10,6 +10,7 @@ import { useTranslation } from 'react-i18next'
 import ChangeLanguage from '../../components/ChangeLanguages/ChangeLanguages'
 import Logo from '../../components/Logo/Logo'
 import BurgerModal from './BurgerModal/BurgerModal'
+import TicketModal from './TicketModal/TicketModal'
 
 const Header = () => {
 	const { t } = useTranslation();
@@ -17,8 +18,11 @@ const Header = () => {
 	const { user, logOutUser } = useContext(CustomContext)
 
 
+
+
 	return (
 		<div className='header'>
+			<TicketModal/>
 			<div className="container">
 				<nav className="header__nav">
 					<Logo />

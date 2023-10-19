@@ -64,6 +64,9 @@
 			cursor: pointer;
 			@extend .hoverOpacity;
 		}
+		&-ticket{
+			font-size: 1.5rem;
+		}
 	}
 	&__change {
 		display: flex;

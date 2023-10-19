@@ -19,7 +19,8 @@ import ProfileOrdersItem from './ProfileOrdersItem'
 
 const Profile = () => {
 	const { t } = useTranslation();
-	const { user, setUser } = useContext(CustomContext)
+	const { user, setUser, randomTicket, API_BASE_URL } = useContext(CustomContext)
+
 	const [userChange, setUserChange] = useState(false)
 	const [passwordChange, setPasswordChange] = useState(false);
 	const [tab, setTab] = useState(2);
@@ -39,7 +40,7 @@ const Profile = () => {
 	password.current = watch("password", "");
 
 	const changeUser = (data) => {
-		axios.patch(`http://localhost:8080/users/${user.id}`, data)
+		axios.patch(`${API_BASE_URL}/users/${user.id}`, data)
 			.then(({ data }) => {
 				setUser(data);
 				localStorage.setItem('user', data);
@@ -47,7 +48,7 @@ const Profile = () => {
 			})
 	};
 	const changePassword = (data) => {
-		axios.patch(`http://localhost:8080/users/${user.id}`, { password: data.password })
+		axios.patch(`${API_BASE_URL}/users/${user.id}`, { password: data.password })
 			.then(() => setPasswordChange(false))
 	};
 
@@ -58,7 +59,7 @@ const Profile = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
-				const response = await axios(`http://localhost:8080/users/${user.id}`);
+				const response = await axios(`${API_BASE_URL}/users/${user.id}`);
 				const userData = response.data;
 				setData(userData);
 				setLoading(false);
@@ -71,6 +72,7 @@ const Profile = () => {
 		if (user.id) {
 			fetchData();
 		}
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [user.id]);
 
 
@@ -100,13 +102,13 @@ const Profile = () => {
 						tab === 1
 							?
 							// <div className='profile__orders '>
-								
-									data.orders.map((item, idx) => (
-										<React.Fragment key={idx}>
-											<ProfileOrdersItem idx={idx} item={item} />
-										</React.Fragment>
-									))
-								
+
+							data.orders.map((item, idx) => (
+								<React.Fragment key={idx}>
+									<ProfileOrdersItem idx={idx} item={item} />
+								</React.Fragment>
+							))
+
 							// </div>
 
 							: <div>
@@ -188,6 +190,12 @@ const Profile = () => {
 											<input type="checkbox" /> {t("profile.receive")}
 										</span>
 									</div>
+								</div>
+								<div className='profile__content'>
+									<h3 className='profile__content-title'>{t("separate.yourCoupon")}:</h3>
+									<span className='profile__content-footer profile__content-ticket'>
+										{randomTicket.title}
+									</span>
 								</div>
 							</div>
 					}

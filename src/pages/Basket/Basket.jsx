@@ -9,13 +9,14 @@ import SubTitle from '../../components/SubTitle/SubTitle';
 import axios from 'axios';
 
 const Basket = () => {
-	const { cart, setCart, ticket, setTicket } = useContext(CustomContext);
+	const { cart, setCart, ticket, setTicket, API_BASE_URL } = useContext(CustomContext);
+
 
 	const { t, i18n } = useTranslation();
 
 	const useTicket = (e) => {
 		e.preventDefault();
-		axios(`http://localhost:8080/tickets?title=${e.target[0].value}`)
+		axios(`${API_BASE_URL}/tickets?title=${e.target[0].value}`)
 			.then(({ data }) => {
 				if (data.length) {
 					setTicket(data)

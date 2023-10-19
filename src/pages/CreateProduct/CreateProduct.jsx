@@ -15,7 +15,8 @@ const CreateProduct = () => {
 	const [sizes, setSizes] = useState([])
 	const [colors, setColors] = useState([])
 
-	const { getAllClothes } = useContext(CustomContext)
+	const { getAllClothes, API_BASE_URL } = useContext(CustomContext)
+
 	const navigate = useNavigate()
 
 	const { handleSubmit, register } = useForm()
@@ -27,7 +28,7 @@ const CreateProduct = () => {
 			imageObj[color] = 'Shop/' + imageName;
 		 }
 console.log(data.image)
-		axios.post('http://localhost:8080/clothes', {
+		axios.post(`${API_BASE_URL}/clothes`, {
 			...data,
 			colors,
 			size: sizes,

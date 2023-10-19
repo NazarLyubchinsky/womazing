@@ -47,8 +47,8 @@ const NavigateList = ({ styleProp, closeModal }) => {
 			<NavLink onClick={closeModal} style={({ isActive }) => ({
 				color: isActive ? 'greenyellow' : 'white'
 			})} className='link' to='profile'>	<FaUser /> Profile</NavLink>
+			
 			<li className='item'>
-
 				<div className='user'>
 					{
 						user.login.length

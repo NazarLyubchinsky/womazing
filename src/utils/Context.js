@@ -81,7 +81,7 @@ export const Context = (props) => {
 
 
 	const navigate = useNavigate();
-	const API_BASE_URL = "http://localhost:8080";
+	const API_BASE_URL = "https://womazingserver.onrender.com";
 
 
 	const handleApiError = (error, isRegistrationError) => {
@@ -109,7 +109,7 @@ export const Context = (props) => {
 		}
 	};
 
-
+	const [randomTicket, setRandomTicket] = useState(null);
 	// Register user
 	const registerUser = async (data) => {
 		try {
@@ -118,6 +118,17 @@ export const Context = (props) => {
 			localStorage.setItem('user', JSON.stringify(userData));
 			setUser(userData);
 			navigate('/');
+
+			const getTicket = await axios.get(`${API_BASE_URL}/tickets`);
+			const ticketsArray = getTicket.data;
+			if (ticketsArray.length > 0) {
+				const randomIndex = Math.floor(Math.random() * ticketsArray.length);
+				const randomTicket = ticketsArray[randomIndex];
+				setRandomTicket(randomTicket);
+				localStorage.setItem('ticket', JSON.stringify(randomTicket));
+			}
+			localStorage.setItem('modalShownAfterRegistration', 'true');
+		
 		} catch (error) {
 			handleApiError(error, true);
 		}
@@ -158,6 +169,9 @@ export const Context = (props) => {
 		if (localStorage.getItem('cart') !== null) {
 			setCart(JSON.parse(localStorage.getItem('cart')))
 		}
+		if (localStorage.getItem('ticket') !== null) {
+			setRandomTicket(JSON.parse(localStorage.getItem('ticket')))
+		}
 
 		getAllClothes()
 	};
@@ -184,7 +198,7 @@ export const Context = (props) => {
 		registerError, setRegisterError,
 		registerUser,
 
-		shop,setShop,
+		shop, setShop,
 
 		page, setPage,
 
@@ -203,7 +217,8 @@ export const Context = (props) => {
 
 		getAllClothes,
 
-		setCount, count
+		setCount, count,
+		randomTicket
 
 	};
 
