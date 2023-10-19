@@ -37,9 +37,9 @@ const Header = () => {
 							<span className='header__tel' >+380 963 211 212</span>
 						</Link>
 
-						<Link to='/cart' className='header__info-cart'>
+						{user.login ? <Link to='/cart' className='header__info-cart'>
 							<img src={shoppingBags} alt="shoppingBags" />
-						</Link>
+						</Link> : ''}
 
 					</div>
 					<ChangeLanguage />
@@ -53,7 +53,7 @@ const Header = () => {
 								: <Link className='header__user-link' to='login'>{t("header.signIn")}</Link>
 						}
 					</div>
-			<BurgerModal/>
+					<BurgerModal />
 				</nav>
 			</div >
 		</div >

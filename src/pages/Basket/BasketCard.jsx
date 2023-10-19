@@ -11,8 +11,8 @@ const BasketCard = ({ item }) => {
 	const { i18n } = useTranslation();
 
 	const sumAllOneProduct = item.inStock >= item.count ? item.price * +item.count : item.price * item.count;
-	return (
 
+	return (
 		<>
 			<div className="basket__product">
 				<div className='basket__product-left'>
@@ -29,10 +29,19 @@ const BasketCard = ({ item }) => {
 						<PriceSale item={item} />
 					</li>
 					<li className="basket__info-item">
-						<input className='product__content-input' min='1' value={count} onChange={(e) => {
-							setCount(e.target.value >= product.inStock ? product.inStock : e.target.value);
-							updateCart(item.id, item.color, item.size, e.target.value)
-						}} type="number" />
+						<input
+							className='product__content-input'
+							min='1'
+							max={item.inStock}
+							value={count}
+
+							onChange={(e) => {
+								const newCount = e.target.value >= product.inStock ? product.inStock : e.target.value;
+								setCount(newCount);
+								updateCart(item.id, item.color, item.size, newCount); // Оновлення кошика на сервері
+							}}
+							type="number"
+						/>
 					</li>
 					<li className="basket__info-item">{i18n.language === 'ua' ? `${sumAllOneProduct * 38} Грн ` : `$${sumAllOneProduct}`}</li>
 				</ul>
@@ -40,20 +49,39 @@ const BasketCard = ({ item }) => {
 			</div>
 
 			{/* media 992px */}
+
+
 			<div className="basket__product-adaptive">
 				<div className='basket__product-row'>
-					<img className='profile__orders-image' src={item.image[item.color]} alt="" />
+					<Link className='basket__product-link' to={`/product/${item.id}`}>
+						<img className='profile__orders-image basket__product-image' src={item.image[item.color]} alt="" />
+					</Link>
 					<div className='profile__orders-block'>
 						<p className='profile__orders-info'>Название : <br /> <span className='profile__orders-span'>{item.title}</span> </p>
 						<p className='profile__orders-info'>Категория : <br /> <span className='profile__orders-span'>{item.category}</span> </p>
 						<p className='profile__orders-info'>цвет : <br /> <span className='profile__orders-span'>{item.color}</span></p>
 						<p className='profile__orders-info'>Размер : <br /> <span className='profile__orders-span'>{item.size}</span> </p>
-						<p className='profile__orders-info'>Кол-во :  <br /> <span className='profile__orders-span'>{item.count}</span></p>
+						<p className='profile__orders-info'>Кол-во :  <br />
+							<input
+								disabled={!item.inStock}
+								className='profile__orders-span basket__info-span'
+								min='1'
+								max={item.inStock}
+								value={count}
+								onChange={(e) => {
+									const newCount = e.target.value >= product.inStock ? product.inStock : e.target.value;
+									setCount(newCount);
+									updateCart(item.id, item.color, item.size, newCount); // Оновлення кошика на сервері
+								}}
+								type="number"
+							/></p>
 						<p className='profile__orders-info'>Цена : <br /> <span className='profile__orders-span'>{item.price}$</span> </p>
 					</div>
 					<p className='basket__product-mark' onClick={() => deleteCart(item.id, item.color, item.size)}><ImCross /></p>
 				</div>
 			</div>
+
+
 		</>
 	);
 };

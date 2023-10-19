@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import shoppingBags from '../../../../assets/header/shoppingBags.svg'
 import { CustomContext } from '../../../../utils/Context'
 import { FaUser } from 'react-icons/fa'
@@ -42,20 +42,30 @@ const NavigateList = ({ styleProp, closeModal }) => {
 					color: isActive ? 'greenyellow' : 'white'
 				})}><img src={shoppingBags} alt="shoppingBags" /> Cart </NavLink>
 			</li>
+
+
+			<NavLink onClick={closeModal} style={({ isActive }) => ({
+				color: isActive ? 'greenyellow' : 'white'
+			})} className='link' to='profile'>	<FaUser /> Profile</NavLink>
 			<li className='item'>
-				<NavLink className='link' onClick={closeModal} to='cart' style={({ isActive }) => ({
-					color: isActive ? 'greenyellow' : 'white'
-				})}>
-					<div className='user'>
-						{
-							user.login.length
-								? <>
-									<Link to='profile'>	<FaUser /></Link>
-									<Link className='header__user-link' to='/' onClick={() => logOutUser()} >{t("header.exit")}</Link>
-								</>
-								: <Link className='header__user-link' to='login'>{t("header.signIn")}</Link>
-						}
-					</div> </NavLink>
+
+				<div className='user'>
+					{
+						user.login.length
+							? <>
+
+								<NavLink style={({ isActive }) => ({
+									color: isActive ? 'greenyellow' : 'white'
+								})} className='link header__user-link' to='/' onClick={() => {
+									logOutUser()
+									closeModal()
+								}} >{t("header.exit")}</NavLink>
+							</>
+							: <NavLink style={({ isActive }) => ({
+								color: isActive ? 'greenyellow' : 'white'
+							})} className='link header__user-link' to='login'>{t("header.signIn")}</NavLink>
+					}
+				</div>
 			</li>
 
 		</ul>

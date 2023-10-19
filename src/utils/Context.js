@@ -38,6 +38,8 @@ export const Context = (props) => {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const [cart, setCart] = useState([]);
+	const [count, setCount] = useState(1)
+
 
 	// Add cart
 	const addCart = (product) => {
@@ -199,7 +201,9 @@ export const Context = (props) => {
 		cart, setCart, addCart, deleteCart, updateCart,
 		ticket, setTicket,
 
-		getAllClothes
+		getAllClothes,
+
+		setCount, count
 
 	};
 

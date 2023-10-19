@@ -7,7 +7,7 @@ import axios from 'axios'
 
 
 const CheckoutForm = () => {
-	const { cart, ticket, user, setCart, setTicket, setUser, API_BASE_URL } = useContext(CustomContext)
+	const { cart, ticket, user, setCart, setTicket, setUser, API_BASE_URL, getAllClothes } = useContext(CustomContext)
 
 	const { register, handleSubmit, reset } = useForm()
 	const { t } = useTranslation()
@@ -22,7 +22,6 @@ const CheckoutForm = () => {
 	const navigate = useNavigate()
 
 	const addOrder = async (data) => {
-		console.log(data);
 		await axios.post(`${API_BASE_URL}/orders`, {
 			...data,
 			clothes: cart,
@@ -56,12 +55,34 @@ const CheckoutForm = () => {
 			: Array.isArray(ticket) && ticket.length && ticket[0].count === 1 ? axios.delete(`${API_BASE_URL}/tickets/${ticket[0].id}`).then(() => console.log('Успешно удален'))
 				: console.log('Error');
 
+		const updateInStockPromises = cart.map((product) => {
+			const updatedInStock = product.inStock - product.count;
+			return axios.patch(`${API_BASE_URL}/clothes/${product.id}`, { inStock: updatedInStock }).then(() => {
+				getAllClothes();
+			});
+		});
+		await Promise.all(updateInStockPromises);
+
 		await reset();
 		await setCart([]);
 		await setTicket([]);
 		await navigate('/order')
 
 	};
+
+	// console.log(cart)
+	// const updateInStockPromises = cart.map((product) => (
+
+	// 	console.log(product)
+	// ))
+	// const updatedInStock = product.inStock - product.count;
+	// console.log(updatedInStock)
+	// return axios.patch(`${API_BASE_URL}/clothes/${product.id}`, { inStock: updatedInStock });
+	// });
+	//  Promise.all(updateInStockPromises);
+
+	// console.log(updateInStockPromises)
+
 	return (
 		<form className='checkoutForm' onSubmit={handleSubmit(addOrder)}>
 			<div className="checkout__buyer">

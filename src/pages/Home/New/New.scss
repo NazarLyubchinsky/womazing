@@ -12,6 +12,9 @@
 			width: 50%;
 			padding: 7.5rem 0 3.125rem 3.125rem;
 			z-index: -2;
+			span {
+				opacity: 0.2 !important;
+			}
 		}
 	}
 	&__title {
@@ -136,7 +139,6 @@
 				width: 100%;
 				padding: 7.5rem 6.25rem 3.125rem 6.25rem;
 				span {
-					opacity: 0.2 !important;
 					width: 100% !important;
 				}
 			}

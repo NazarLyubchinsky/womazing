@@ -14,25 +14,24 @@ const Product = () => {
 	const location = useLocation();
 	const params = useParams()
 
-	const { color, setColor, size, setSize, product, setProduct, addCart, user, shop, getAllClothes } = useContext(CustomContext)
+	const { cart, color, setColor, size, setSize, product, setProduct, addCart, user, shop, getAllClothes, API_BASE_URL, count } = useContext(CustomContext)
 
-	const [count, setCount] = useState(1)
 	const [sale, setSale] = useState(false);
 	const [saleCount, setSaleCount] = useState('');
 
 	useEffect(() => {
-		axios(`http://localhost:8080/clothes/${params.id}`)
+		axios(`${API_BASE_URL}/clothes/${params.id}`)
 			.then(({ data }) => {
 				setProduct(data)
 				setColor(data.colors[0]);
 				setSize(data.size[0])
-				window.scrollTo({
-					top: 0,
-					behavior: 'smooth',
-				});
+
 			})
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [location, shop])
+
+	const isItemInCart = cart.find(itemInCart => itemInCart.id === product.id);
+
 
 
 	return (
@@ -45,24 +44,25 @@ const Product = () => {
 						<img src={`../${product.image[color]}`} alt={product.title} className="product__content-img" />
 						<div className="product__content-info">
 							{
-								!product.priceSale ?
-									<>
-										{sale ? <input className='product__content-inputSale' placeholder='%' value={saleCount} onChange={(e) => setSaleCount(e.target.value)} type="number" /> : ''}
+								user.email === 'admin@gmail.com' ?
+									!product.priceSale ?
+										<>
+											{sale ? <input className='product__content-inputSale' placeholder='%' value={saleCount} onChange={(e) => setSaleCount(e.target.value)} type="number" /> : ''}
 
-										<button className='product__content-btnSale' type='button' onClick={() => {
-											if (sale) {
-												const discountedPrice = product.price - (product.price / 100 * saleCount);
-												const roundedDiscountedPrice = parseFloat(discountedPrice.toFixed(2));
-												axios.patch(`http://localhost:8080/clothes/${product.id}`, { priceSale: roundedDiscountedPrice })
-													.then(() => {
-														getAllClothes();
-														setSaleCount(0)
-													})
-											}
-											setSale(!sale);
-										}}>Добавить {sale ? '' : 'скидку'}</button>
-									</>
-									: ''
+											<button className='product__content-btnSale' type='button' onClick={() => {
+												if (sale) {
+													const discountedPrice = product.price - (product.price / 100 * saleCount);
+													const roundedDiscountedPrice = parseFloat(discountedPrice.toFixed(2));
+													axios.patch(`${API_BASE_URL}/clothes/${product.id}`, { priceSale: roundedDiscountedPrice })
+														.then(() => {
+															getAllClothes();
+															setSaleCount(0)
+														})
+												}
+												setSale(!sale);
+											}}>Добавить {sale ? '' : 'скидку'}</button>
+										</>
+										: '' : ''
 							}
 							<div>
 								<PriceSale saleCount={saleCount} item={product} />
@@ -90,18 +90,24 @@ const Product = () => {
 								{user.login ? (
 									// User is logged in
 									product.inStock ? (
+
 										<>
-											<input className='product__content-input' min='1' max={product.inStock} type="number" value={count} onChange={(e) => setCount(e.target.value)} />
-											<button className='product__content-btn' onClick={() => addCart({
-												id: product.id,
-												title: product.title,
-												image: product.image,
-												color,
-												size,
-												count,
-												price: product.priceSale || product.price,
-												category: product.category
-											})} type='button'>{t("product.addToCart")}</button>
+											<button className='product__content-btn'
+												style={{ background: !product.inStock ? "grey" : "#6E9C9F" }}
+												disabled={(isItemInCart && (count + (isItemInCart.count || 0)) > product.inStock)}
+												onClick={() => {
+													addCart({
+														id: product.id,
+														title: product.title,
+														image: product.image,
+														color,
+														size,
+														count,
+														price: product.priceSale || product.price,
+														category: product.category,
+														inStock: product.inStock
+													})
+												}} type='button'>{t("product.addToCart")}</button>
 										</>
 									) : (
 										// Product is not in stock
@@ -125,3 +131,5 @@ const Product = () => {
 }
 
 export default Product
+
+

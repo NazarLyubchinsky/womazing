@@ -17,18 +17,9 @@ const Layout = () => {
 			</main>
 			{
 				location.pathname === '/login'
-				|| location.pathname === '/register'
-				|| location.pathname === '/admin'
+					|| location.pathname === '/register'
+					|| location.pathname === '/admin'
 					? '' : <Footer />
-
-				// location.pathname === '/'
-				// 	|| location.pathname === "/contact"
-				// 	|| location.pathname === "/shop"
-				// 	|| location.pathname === "/shop/"
-				// 	|| location.pathname === "/brands"
-				// 	|| location.pathname === "/cart"
-				// 	|| location.pathname === "/product"
-				// 	? <Footer /> : ''
 			}
 		</>
 	)

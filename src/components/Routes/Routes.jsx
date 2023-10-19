@@ -25,20 +25,20 @@ const AppRoutes = () => {
 	return (
 		<Routes>
 			<Route path="/" element={<Layout />}>
-				{/* <Route path="" element={<Home />} /> */}
 				{user.email !== 'admin@gmail.com' ? <Route path='/' element={<Home />} /> : ''}
 				<Route path='contact' element={<Contact />} />
 				<Route path='shop' element={<Shop />} />
 				<Route path='product/:id' element={<Product />} />
 				<Route path='brands' element={<Brands />} />
-				<Route path='cart' element={<Basket />} />
-				<Route path='checkout' element={<Checkout />} />
-				<Route path='order' element={<Order />} />
 				<Route path='profile' element={<Profile />} />
 				<Route path='login' element={<Login />} />
 				<Route path='register' element={<Register />} />
-				{/* {user.email === 'admin@gmail.com' ? <Route path='admin/*' element={<AdminPanel />} /> : ''} */}
-				{/* {user.email === 'admin@gmail.com' ? <Route path='clothes' element={<AdminPanel />} /> : ''} */}
+				{user.login ?
+					<>
+						<Route path='cart' element={<Basket />} />
+						<Route path='checkout' element={<Checkout />} />
+						<Route path='order' element={<Order />} />
+					</> : ''}
 				{user.email === 'admin@gmail.com' ? <Route path='create' element={<CreateProduct />} /> : ''}
 				{user.email === 'admin@gmail.com' ? <Route path='/*' element={<AdminPanel />} /> : ''}
 				<Route path="*" element={<NotFound />} />

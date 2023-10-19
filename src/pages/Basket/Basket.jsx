@@ -41,17 +41,17 @@ const Basket = () => {
 						<li className="basket__info-item">{t("basket.total")}</li>
 					</ul>
 				</div>
-				<div className='basket__info-card'>
-				{
-					cart.length ? cart.map((item, idx) => (
-						<React.Fragment key={idx}>
-							<BasketCard cart={cart} item={item} />
-						</React.Fragment>
-					))
-						: <p className='basket__info-message'>{t("basket.basketText")}</p>
-				}
+				<div className='basket__info-card' style={{ justifyContent: `${cart.length === 1 ? 'center' : ''}` }}>
+					{
+						cart.length ? cart.map((item, idx) => (
+							<React.Fragment key={idx}>
+								<BasketCard cart={cart} item={item} />
+							</React.Fragment>
+						))
+							: <p className='basket__info-message'>{t("basket.basketText")}</p>
+					}
 				</div>
-				
+
 				{
 					cart.length ?
 						<>
@@ -91,7 +91,7 @@ const Basket = () => {
 				}
 			</div>
 
-		</section>
+		</section >
 	);
 };
 
