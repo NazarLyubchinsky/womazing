@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Demo website of the WOMAZING store.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the code for a React application developed to create a user interface for a store. The store encompasses numerous features that provide convenience and functionality for users.
 
-## Available Scripts
+#### Please note that data loading may take a little time as json-server and json-server-auth are being used.
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Live Demo](#live-demo)
+- [Screenshots](#Screenshots)
+- [Description](#description)
+- [The main features of the store include](#main-features)
+- [Backend](#backend)
+- [Frontend](#frontend)
+- [UI Requirements](#ui-requirements)
+- [Instructions](#instructions)
+- [Contact](#contact)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Live Demo
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Check out the live project on Netlify: https://precious-seahorse-946c07.netlify.app/
 
-### `npm test`
+🌱 Please note that there might be issues with loading products from server on the live demo.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
+![localhost_3000_catalog_](https://github.com/NazarLyubchinsky/Allegria/assets/120901032/1cfe60db-b80f-4efc-a5c6-a0de5eed4be1)
+-------
+![localhost_3000_catalog_ (1)](https://github.com/NazarLyubchinsky/Allegria/assets/120901032/56a74031-4d86-4989-b327-2fe18eba97b9)
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Description
 
-### `npm run eject`
+ The application is designed with user-friendly features and a responsive layout.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## main features
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Product Catalog: We offer a product catalog that can be easily browsed by users. You can search for products in different categories and filter them by price.
+- Add to Cart: Users can add selected products to their cart for convenient order placement.
+- Order Placement: When the cart is filled, users can place an order, specifying delivery and other necessary details.
+- Product Filtering: The product catalog supports the ability to filter by price, sorting them in ascending or descending order. This allows users to quickly find products that meet their requirements.
+- On our website, you have the ability to easily switch the interface language from Ukrainian to English and vice versa. Simply select the desired language in the top right corner of the page, and the website will automatically switch to the chosen language."
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Our application is designed with user convenience and the needs of a modern online store in mind. It is a convenient and efficient tool for shopping and managing products.
+## Backend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application uses a fake REST API provided by [json-server](https://my-json-server.typicode.com/NazarLyubchinsky/json-server) 
+or download the repository and use it "http://localhost:4444" information from above
 
-## Learn More
+## Frontend
+- The latest version of React is used.
+- Functional components and JSX are employed.
+- Icons from the [lucide-react](https://mui.com/material-ui/material-icons/) library are used.
+- React Forms: I leveraged React to create and manage forms within the application. This allows for a dynamic and responsive user experience when capturing and submitting data.
+- Reduce
+- custom UseContext
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## UI Requirements
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application follows an eye-friendly design and is responsive.
 
-### Code Splitting
+## Instructions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To run the project on your local machine:
 
-### Analyzing the Bundle Size
+1. Clone this repository: `git clone [repo-link]`
+2. Navigate to the project directory: `cd [project-folder]`
+3. Install dependencies: `npm install`
+4. Run the Vite development server: `npm run start`
+5. Start the front-end and back-end development servers with "npm run dev."
+6. Access the application in your browser at `http://localhost:3000` or link provided by vite
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contact
 
-### Making a Progressive Web App
+For any inquiries or feedback, feel free to contact:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Nazar Lyubchinskyi
+- GitHub: (https://github.com/NazarLyubchinsky)
+- linkedin: (https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+Enjoy exploring the React application and its features!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
