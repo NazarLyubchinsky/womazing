@@ -22,7 +22,7 @@ const Header = () => {
 
 	return (
 		<div className='header'>
-			<TicketModal/>
+			<TicketModal />
 			<div className="container">
 				<nav className="header__nav">
 					<Logo />
@@ -48,10 +48,11 @@ const Header = () => {
 					</div>
 					<ChangeLanguage />
 					<div className='header__user'>
+					
 						{
 							user.login.length
 								? <>
-									<Link to='profile'>	<FaUser /></Link>
+									<Link className='header__user-link' to='profile'>	<FaUser />{user.login}</Link>
 									<Link className='header__user-link' to='/' onClick={() => logOutUser()} >{t("header.exit")}</Link>
 								</>
 								: <Link className='header__user-link' to='login'>{t("header.signIn")}</Link>

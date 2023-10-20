@@ -14,6 +14,19 @@ export const Context = (props) => {
 	const [registerError, setRegisterError] = useState(null);
 
 	const [shop, setShop] = useState([]);
+	const [product, setProduct] = useState({});
+	const [sort, setSort] = useState('');
+	const [status, setStatus] = useState('all');
+
+	const [page, setPage] = useState(1);
+
+	const [size, setSize] = useState('');
+	const [color, setColor] = useState('');
+
+	const [isLoading, setIsLoading] = useState(true);
+
+	const [cart, setCart] = useState([]);
+	const [count, setCount] = useState(1)
 
 	const getAllClothes = async () => {
 		try {
@@ -27,18 +40,7 @@ export const Context = (props) => {
 		}
 	}
 
-	const [page, setPage] = useState(1);
-	const [sort, setSort] = useState('');
-	const [status, setStatus] = useState('all');
-	const [product, setProduct] = useState({});
 
-	const [size, setSize] = useState('');
-	const [color, setColor] = useState('');
-
-	const [isLoading, setIsLoading] = useState(true);
-
-	const [cart, setCart] = useState([]);
-	const [count, setCount] = useState(1)
 
 
 	// Add cart
@@ -128,7 +130,7 @@ export const Context = (props) => {
 				localStorage.setItem('ticket', JSON.stringify(randomTicket));
 			}
 			localStorage.setItem('modalShownAfterRegistration', 'true');
-		
+
 		} catch (error) {
 			handleApiError(error, true);
 		}
@@ -159,6 +161,8 @@ export const Context = (props) => {
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [shop]);
+
+
 
 
 	const fetchData = async () => {

@@ -7,7 +7,6 @@ const ProfileOrdersItem = ({ item, idx }) => {
 	const { t } = useTranslation();
 	const [isActive, setIsActive] = useState(false);
 
-	console.log(item)
 	return (
 		<>
 			<div className='profile__orders'>

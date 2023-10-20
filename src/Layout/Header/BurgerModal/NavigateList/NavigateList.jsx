@@ -17,17 +17,17 @@ const NavigateList = ({ styleProp, closeModal }) => {
 					to='shop'
 					onClick={closeModal} style={({ isActive }) => ({
 						color: isActive ? 'greenyellow' : 'white'
-					})}>Shop</NavLink>
+					})}>{t("header.link2")}</NavLink>
 			</li>
 			<li className='item'>
 				<NavLink className='link' onClick={closeModal} to='brands' style={({ isActive }) => ({
 					color: isActive ? 'greenyellow' : 'white'
-				})}>Brands</NavLink>
+				})}>{t("header.link3")}</NavLink>
 			</li>
 			<li className='item'>
 				<NavLink className='link' onClick={closeModal} to='contact' style={({ isActive }) => ({
 					color: isActive ? 'greenyellow' : 'white'
-				})}>Contact</NavLink>
+				})}>{t("header.link4")}</NavLink>
 			</li>
 			{
 				user.email === 'admin@gmail.com' ?
@@ -40,14 +40,16 @@ const NavigateList = ({ styleProp, closeModal }) => {
 			<li className='item'>
 				<NavLink className='link' onClick={closeModal} to='cart' style={({ isActive }) => ({
 					color: isActive ? 'greenyellow' : 'white'
-				})}><img src={shoppingBags} alt="shoppingBags" /> Cart </NavLink>
+				})}><img src={shoppingBags} alt="shoppingBags" /> {t('separate.cart')}</NavLink>
 			</li>
 
-
-			<NavLink onClick={closeModal} style={({ isActive }) => ({
-				color: isActive ? 'greenyellow' : 'white'
-			})} className='link' to='profile'>	<FaUser /> Profile</NavLink>
-			
+			{
+				user.login.length ?
+					<NavLink onClick={closeModal} style={({ isActive }) => ({
+						color: isActive ? 'greenyellow' : 'white'
+					})} className='link' to='profile'>	<FaUser /> {t('separate.profile')}</NavLink>
+					: null
+			}
 			<li className='item'>
 				<div className='user'>
 					{
@@ -68,7 +70,7 @@ const NavigateList = ({ styleProp, closeModal }) => {
 				</div>
 			</li>
 
-		</ul>
+		</ul >
 	)
 }
 

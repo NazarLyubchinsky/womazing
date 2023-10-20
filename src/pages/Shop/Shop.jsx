@@ -107,7 +107,6 @@ const Shop = () => {
 							justifyContent: 'center'
 						}} simple onChange={setPage} current={page} total={shop.filter(FilterCategory).length} pageSize={9} /> : ''
 					}
-
 				</div>
 			</section>
 	)

@@ -7,7 +7,11 @@
 		"inStock": "in stock",
 		"notStock": "Not in stock",
 		"couponDiscount": "You have been provided a coupon for a product discount",
-		"yourCoupon":"Your coupon"
+		"yourCoupon":"Your coupons",
+		"cart": "Cart",
+		"profile": "Profile",
+		"yourDontCoupon":"You don't have any coupons",
+		"YouDontOrdered":"You haven't ordered anything yet"
 	},
 	"header": {
 		"link1": "Main",

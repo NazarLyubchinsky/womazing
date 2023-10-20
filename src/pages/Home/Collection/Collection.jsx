@@ -7,22 +7,23 @@ import Card from '../../../components/Card/Card';
 import { useContext } from 'react';
 import { CustomContext } from '../../../utils/Context';
 import Title from '../../../components/Title/Title';
+import Preloader from '../../../components/Preloader/Preloader';
 
 const Collection = () => {
 	const { t } = useTranslation();
-	const { shop } = useContext(CustomContext)
+	const { shop, isLoading } = useContext(CustomContext)
 	return (
 		<section className='collection'>
 			<div className="container">
 				<Title title={t("home.collection.title")} />
 				{/* <h2 className="collection__title">{t("home.collection.title")}</h2> */}
 				<div className="collection__content">
-					{
+					{!isLoading ?
 						shop.slice(0, 3).map((el) => (
 							<React.Fragment key={el.id}>
 								<Card item={el} styleWidth='styleWidth' />
 							</React.Fragment>
-						))
+						)) : <Preloader />
 					}
 				</div>
 				<Link to='shop'>

@@ -34,7 +34,10 @@ const TicketModal = () => {
 									&times;
 								</span>
 								<p className='modal__ticket-text'>{t("separate.couponDiscount")}</p>
-								<Link to='profile' className='modal__ticket-text' style={{ marginTop: '40px', fontSize: '30px', textDecoration: 'underline' }}>{randomTicket.title}</Link>
+								<Link onClick={closeModal} to='profile' className='modal__ticket-text' style={{
+									marginTop: '40px', fontSize: '30px', textDecoration: 'underline', display: 'flex',
+									justifyContent: 'center'
+								}}>{randomTicket.title}</Link>
 							</div>
 						</div>
 					)}

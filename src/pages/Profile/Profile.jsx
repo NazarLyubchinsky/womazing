@@ -72,9 +72,10 @@ const Profile = () => {
 		if (user.id) {
 			fetchData();
 		}
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [user.id]);
 
+	console.log(data)
 
 	return (
 		loading ? <Preloader /> :
@@ -101,15 +102,20 @@ const Profile = () => {
 					{
 						tab === 1
 							?
-							// <div className='profile__orders '>
+							<>
+								{
 
-							data.orders.map((item, idx) => (
-								<React.Fragment key={idx}>
-									<ProfileOrdersItem idx={idx} item={item} />
-								</React.Fragment>
-							))
-
-							// </div>
+									data.orders.length ?
+										data.orders.map((item, idx) => (
+											<React.Fragment key={idx}>
+												<ProfileOrdersItem idx={idx} item={item} />
+											</React.Fragment>
+										))
+										: <p style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+											{t("separate.YouDontOrdered")}
+										</p>
+								}
+							</>
 
 							: <div>
 								<form onSubmit={handleSubmit(changeUser)} className="profile__content">
@@ -194,7 +200,7 @@ const Profile = () => {
 								<div className='profile__content'>
 									<h3 className='profile__content-title'>{t("separate.yourCoupon")}:</h3>
 									<span className='profile__content-footer profile__content-ticket'>
-										{randomTicket ? randomTicket.title : ''}
+										{randomTicket ? randomTicket.title : `${t("separate.yourDontCoupon")}`}
 									</span>
 								</div>
 							</div>

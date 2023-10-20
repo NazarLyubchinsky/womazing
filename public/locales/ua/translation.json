@@ -7,7 +7,13 @@
 		"inStock": "В наявності",
 		"notStock": "Немає в наявності",
 		"couponDiscount": "Вам наданий купон для скидки товару",
-		"yourCoupon": "Ваш купон"
+		"yourCoupon": "Ваші купони",
+		"cart": "Корзина",
+		"profile": "Профіль",
+		"yourDontCoupon":"У вас немає купонів",
+		"YouDontOrdered":"Ви ще нічого не замовляли"
+
+
 	},
 	"header": {
 		"link1": "Головна",
