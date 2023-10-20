@@ -25,7 +25,7 @@ Check out the live project on Netlify: https://precious-seahorse-946c07.netlify.
 ## Screenshots
 ![precious-seahorse-946c07 netlify app_](https://github.com/NazarLyubchinsky/womazing/assets/120901032/b24d0e04-65b3-4274-8d51-01311d140ed2)
 -------
-![localhost_3000_catalog_ (1)](https://github.com/NazarLyubchinsky/Allegria/assets/120901032/56a74031-4d86-4989-b327-2fe18eba97b9)
+![precious-seahorse-946c07 netlify app_ (1)](https://github.com/NazarLyubchinsky/womazing/assets/120901032/741b56f6-bed1-4fb3-a372-95c5b7a25b55)
 
 
 
@@ -36,26 +36,71 @@ Check out the live project on Netlify: https://precious-seahorse-946c07.netlify.
 
 ## main features
 
-- Product Catalog: We offer a product catalog that can be easily browsed by users. You can search for products in different categories and filter them by price.
-- Add to Cart: Users can add selected products to their cart for convenient order placement.
-- Order Placement: When the cart is filled, users can place an order, specifying delivery and other necessary details.
-- Product Filtering: The product catalog supports the ability to filter by price, sorting them in ascending or descending order. This allows users to quickly find products that meet their requirements.
-- On our website, you have the ability to easily switch the interface language from Ukrainian to English and vice versa. Simply select the desired language in the top right corner of the page, and the website will automatically switch to the chosen language."
+1. One of the key functions that I have implemented is user and administrator authentication with their respective privileges:
+    - User Privileges:
 
-Our application is designed with user convenience and the needs of a modern online store in mind. It is a convenient and efficient tool for shopping and managing products.
+* Adding products to the shopping cart and placing orders.
+* Viewing their own profile and the ability to update personal information and password.
+* Viewing order history.
+  
+  - Administrator Privileges:
+
+* Adding products to the store.
+* Setting discounts on products (if not already set).
+* Admin dashboard:
+    Filtering and searching for products.
+    Uploading a table with data.
+    Sorting, editing, deleting, and adding all products.
+    Managing all registered users, including editing, deleting, and adding them.
+    Checking orders and sending them to customers' addresses.
+
+   - Registration involves the following fields:
+
+* Email
+* Username
+* Phone number
+* Password
+* Password confirmation
+* After successful registration, you will receive a coupon that can be used as a discount.
+
+  - Login is done using:
+
+* Email
+* Password
+
+2. After logging in, you will be greeted with a homepage featuring four blocks. The first two blocks will take you to the store catalog, and the last block allows you to learn more about our brand.
+
+3. In the "Store" section, you can browse products, but to add them to your cart, you need to register or log in. Product filtering is available by brand, price range, and discounts.
+
+4. On the product page, you can choose the size and color of the product, add it to your cart, and view related products.
+
+5. The "About the Brand" page provides a description of the brand, and the "Contact" page contains a Google map, our contact information, and a feedback form.
+
+6. The "Cart" page contains a list of items you've added, and it remains active until you place an order or remove items. Here you can apply a discount coupon, clear individual items or the entire cart, and proceed to checkout.
+
+7. On the "Checkout" page, you need to enter customer information, the recipient's address, and review your order.
+  
+9. A multilingual website  Eng, UA 
+
 ## Backend
 
-The application uses a fake REST API provided by [json-server](https://my-json-server.typicode.com/NazarLyubchinsky/json-server) 
-or download the repository and use it "http://localhost:4444" information from above
+Json-server, Json-server-auth
 
 ## Frontend
-- The latest version of React is used.
-- Functional components and JSX are employed.
-- Icons from the [lucide-react](https://mui.com/material-ui/material-icons/) library are used.
-- React Forms: I leveraged React to create and manage forms within the application. This allows for a dynamic and responsive user experience when capturing and submitting data.
-- Reduce
-- custom UseContext
-
+Library:
+- antd
+- axios
+- google-map-react
+- i18next
+- json-server
+- json-server-auth
+- react-admin
+- ra-data-json-server
+- react-lazy-load-image-component
+- swiper
+- react-hook-form
+- react-input-mask
+  
 ## UI Requirements
 
 The application follows an eye-friendly design and is responsive.
