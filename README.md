@@ -23,7 +23,7 @@ Check out the live project on Netlify: https://precious-seahorse-946c07.netlify.
 🌱 Please note that there might be issues with loading products from server on the live demo.
 
 ## Screenshots
-![localhost_3000_catalog_](https://github.com/NazarLyubchinsky/Allegria/assets/120901032/1cfe60db-b80f-4efc-a5c6-a0de5eed4be1)
+![precious-seahorse-946c07 netlify app_](https://github.com/NazarLyubchinsky/womazing/assets/120901032/b24d0e04-65b3-4274-8d51-01311d140ed2)
 -------
 ![localhost_3000_catalog_ (1)](https://github.com/NazarLyubchinsky/Allegria/assets/120901032/56a74031-4d86-4989-b327-2fe18eba97b9)
 
