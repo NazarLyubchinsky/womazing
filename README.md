@@ -120,9 +120,6 @@ To run the project on your local machine:
 
 For any inquiries or feedback, feel free to contact:
 
-- Nazar Lyubchinskyi
-- GitHub: (https://github.com/NazarLyubchinsky)
-- linkedin: (https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-2CA5E0?style=for-the-badge&logo=linkedIn&logoColor=white)](https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/) 
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/VBShadow) 
 [![portfolio](https://img.shields.io/badge/Portfolio-2CA5E0?style=for-the-badge&logoColor=white)](https://www.weblancer.net/users/Lyubch/#portfolio) 
