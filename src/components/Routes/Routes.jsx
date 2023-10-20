@@ -25,7 +25,7 @@ const AppRoutes = () => {
 	return (
 		<Routes>
 			<Route path="/" element={<Layout />}>
-				{user.email !== 'admin@gmail.com' ? <Route path='/' element={<Home />} /> : ''}
+				<Route path='/' element={<Home />} />
 				<Route path='contact' element={<Contact />} />
 				<Route path='shop' element={<Shop />} />
 				<Route path='product/:id' element={<Product />} />

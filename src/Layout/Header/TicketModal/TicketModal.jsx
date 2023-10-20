@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import { CustomContext } from '../../../utils/Context'
 import './TicketModal.scss'
 
@@ -33,7 +34,7 @@ const TicketModal = () => {
 									&times;
 								</span>
 								<p className='modal__ticket-text'>{t("separate.couponDiscount")}</p>
-								<p className='modal__ticket-text' style={{ marginTop: '40px', fontSize: '30px', textDecoration: 'underline' }}>{randomTicket.title}</p>
+								<Link to='profile' className='modal__ticket-text' style={{ marginTop: '40px', fontSize: '30px', textDecoration: 'underline' }}>{randomTicket.title}</Link>
 							</div>
 						</div>
 					)}

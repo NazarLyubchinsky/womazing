@@ -184,6 +184,7 @@ export const Context = (props) => {
 	const logOutUser = () => {
 		localStorage.removeItem('user');
 		localStorage.removeItem('cart');
+		localStorage.removeItem('ticket');
 		setUser({ login: '' })
 	};
 

@@ -194,7 +194,7 @@ const Profile = () => {
 								<div className='profile__content'>
 									<h3 className='profile__content-title'>{t("separate.yourCoupon")}:</h3>
 									<span className='profile__content-footer profile__content-ticket'>
-										{randomTicket.title}
+										{randomTicket ? randomTicket.title : ''}
 									</span>
 								</div>
 							</div>
