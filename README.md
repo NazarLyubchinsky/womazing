@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+# Demo website of the WOMAZING store.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Login with admin:  
+   email: "admin@gmail.com"   password: "1234a"
 
-## Available Scripts
+This repository contains the code for a React application developed to create a user interface for a store. The store encompasses numerous features that provide convenience and functionality for users.
 
-In the project directory, you can run:
+#### Please note that data loading may take a little time as json-server and json-server-auth are being used.
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Live Demo](#live-demo)
+- [Screenshots](#Screenshots)
+- [Description](#description)
+- [The main features of the store include](#main-features)
+- [Backend](#backend)
+- [Frontend](#frontend)
+- [UI Requirements](#ui-requirements)
+- [Instructions](#instructions)
+- [Contact](#contact)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Live Demo
 
-### `npm test`
+Check out the live project on Netlify: https://precious-seahorse-946c07.netlify.app/
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🌱 Please note that there might be issues with loading products from server on the live demo.
 
-### `npm run build`
+## Screenshots
+![precious-seahorse-946c07 netlify app_](https://github.com/NazarLyubchinsky/womazing/assets/120901032/b24d0e04-65b3-4274-8d51-01311d140ed2)
+-------
+![precious-seahorse-946c07 netlify app_ (1)](https://github.com/NazarLyubchinsky/womazing/assets/120901032/741b56f6-bed1-4fb3-a372-95c5b7a25b55)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Description
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ The application is designed with user-friendly features and a responsive layout.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## main features
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. One of the key functions that I have implemented is user and administrator authentication with their respective privileges:
+    - User Privileges:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Adding products to the shopping cart and placing orders.
+* Viewing their own profile and the ability to update personal information and password.
+* Viewing order history.
+  
+  - Administrator Privileges:
 
-## Learn More
+* Adding products to the store.
+* Setting discounts on products (if not already set).
+* Admin dashboard:
+    Filtering and searching for products.
+    Uploading a table with data.
+    Sorting, editing, deleting, and adding all products.
+    Managing all registered users, including editing, deleting, and adding them.
+    Checking orders and sending them to customers' addresses.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   - Registration involves the following fields:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Email
+* Username
+* Phone number
+* Password
+* Password confirmation
+* After successful registration, you will receive a coupon that can be used as a discount.
 
-### Code Splitting
+  - Login is done using:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Email
+* Password
 
-### Analyzing the Bundle Size
+2. After logging in, you will be greeted with a homepage featuring four blocks. The first two blocks will take you to the store catalog, and the last block allows you to learn more about our brand.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. In the "Store" section, you can browse products, but to add them to your cart, you need to register or log in. Product filtering is available by brand, price range, and discounts.
 
-### Making a Progressive Web App
+4. On the product page, you can choose the size and color of the product, add it to your cart, and view related products.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+5. The "About the Brand" page provides a description of the brand, and the "Contact" page contains a Google map, our contact information, and a feedback form.
 
-### Advanced Configuration
+6. The "Cart" page contains a list of items you've added, and it remains active until you place an order or remove items. Here you can apply a discount coupon, clear individual items or the entire cart, and proceed to checkout.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+7. On the "Checkout" page, you need to enter customer information, the recipient's address, and review your order.
+  
+9. A multilingual website  Eng, UA 
 
-### Deployment
+## Backend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Json-server, Json-server-auth
 
-### `npm run build` fails to minify
+## Frontend
+Library:
+- antd
+- axios
+- google-map-react
+- i18next
+- json-server
+- json-server-auth
+- react-admin
+- ra-data-json-server
+- react-lazy-load-image-component
+- swiper
+- react-hook-form
+- react-input-mask
+  
+## UI Requirements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The application follows an eye-friendly design and is responsive.
+
+## Instructions
+
+To run the project on your local machine:
+
+1. Clone this repository: `git clone [repo-link]`
+2. Navigate to the project directory: `cd [project-folder]`
+3. Install dependencies: `npm install`
+4. Run the Vite development server: `npm run start`
+5. Start the front-end and back-end development servers with "npm run dev."
+6. Access the application in your browser at `http://localhost:3000` or link provided by vite
+
+## Contact
+
+For any inquiries or feedback, feel free to contact:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-2CA5E0?style=for-the-badge&logo=linkedIn&logoColor=white)](https://www.linkedin.com/in/nazar-lyubchynskyi-37a89026b/) 
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/VBShadow) 
+[![portfolio](https://img.shields.io/badge/Portfolio-2CA5E0?style=for-the-badge&logoColor=white)](https://www.weblancer.net/users/Lyubch/#portfolio) 
+
+
+Enjoy exploring the React application and its features!
+
