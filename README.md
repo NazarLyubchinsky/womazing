@@ -1,7 +1,7 @@
 # Demo website of the WOMAZING store.
-## Login with admin:  
-   email: "admin@gmail.com"
-   password: "1234a"
+
+### Login with admin:  
+   email: "admin@gmail.com"   password: "1234a"
 
 This repository contains the code for a React application developed to create a user interface for a store. The store encompasses numerous features that provide convenience and functionality for users.
 
